@@ -1533,6 +1533,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 1263111715868034790, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  teleportCanceledAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Teleport Canceled
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 5cc2c6fa-99a9-4240-9ade-96c84c6a6368
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 737890489006591557, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1977043845
 GameObject:
   m_ObjectHideFlags: 0
