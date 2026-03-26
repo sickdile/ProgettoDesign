@@ -24,6 +24,4 @@ public class Teleportation_InputHandler : MonoBehaviour
     {
         teleportInteractor.gameObject.SetActive(true);
     }
-
-
 }
