@@ -6,12 +6,13 @@ public class Teleportation_InputHandler : MonoBehaviour
 {
     public XRRayInteractor teleportInteractor;
     public InputActionProperty teleportActivatorAction;
+    public InputActionProperty teleportCanceledAction;
 
     private void Start()
     {
         teleportInteractor.gameObject.SetActive(false);
         teleportActivatorAction.action.performed += TeleportPerformed;
-        teleportActivatorAction.action.canceled += TeleportCanceled;
+        teleportCanceledAction.action.canceled += TeleportCanceled;
     }
 
     private void TeleportCanceled(InputAction.CallbackContext obj)
