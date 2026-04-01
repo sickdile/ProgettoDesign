@@ -7,7 +7,11 @@ public class myManager : MonoBehaviour
 
     [SerializeField]
     ARTrackedImageManager m_ImageManager;
-    [SerializeField] GameObject testPrefab_scene;
+    [SerializeField] GameObject[] Anchors;
+
+    [SerializeField] GameObject scenaDaVisualizzare;
+
+    Transform[] checkpoints = new Transform[2];
 
     void OnEnable() => m_ImageManager.trackablesChanged.AddListener(OnChanged);
 
@@ -18,7 +22,18 @@ public class myManager : MonoBehaviour
         foreach (var newImage in eventArgs.added)
         {
             Debug.Log("New image detected!");
-            Instantiate(testPrefab_scene, newImage.transform);
+            if (newImage.referenceImage.name == "MKR_0")
+            {
+                checkpoints[0] = Instantiate(Anchors[0], newImage.transform).transform;
+                scenaDaVisualizzare.SetActive(true);
+                scenaDaVisualizzare.transform.parent = checkpoints[0];
+            }
+            else if (newImage.referenceImage.name == "MKR_1")
+            {
+                checkpoints[1] = Instantiate(Anchors[1], newImage.transform).transform;
+                scenaDaVisualizzare.transform.parent = checkpoints[1];
+
+            }
         }
 
         foreach (var updatedImage in eventArgs.updated)

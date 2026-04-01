@@ -246,6 +246,72 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1001 &732836873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3326561404313341656, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_Name
+      value: EnvironmentTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326561404313341656, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.88254
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.66551
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394964603914608487, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+--- !u!1 &1014339589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3326561404313341656, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+  m_PrefabInstance: {fileID: 732836873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1167446570
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +679,7 @@ GameObject:
   - component: {fileID: 2512387470422636642}
   - component: {fileID: 2512387470422636670}
   - component: {fileID: 2512387470422636671}
+  - component: {fileID: 2512387470422636672}
   m_Layer: 0
   m_Name: XR Origin (AR Rig)
   m_TagString: Untagged
@@ -651,7 +718,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::myAnchorManager
   m_ImageManager: {fileID: 2512387470422636670}
-  testPrefab_scene: {fileID: 3326561404313341656, guid: 8d8f8ca74e248f547aec4ed209cf28a6, type: 3}
+  Anchors:
+  - {fileID: 6537014043949390110, guid: 90d896a7fdc15714b96479a51d06deb5, type: 3}
+  - {fileID: 5077346833994873604, guid: ba89f368f4ead78419e06d08b1f3e6f1, type: 3}
+  scenaDaVisualizzare: {fileID: 1014339589}
+--- !u!114 &2512387470422636672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512387470422636669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.ARFoundation::UnityEngine.XR.ARFoundation.ARAnchorManager
+  <trackablesChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AnchorPrefab: {fileID: 0}
 --- !u!4 &2512387470860572925
 Transform:
   m_ObjectHideFlags: 0
@@ -757,3 +843,4 @@ SceneRoots:
   - {fileID: 2512387470422636640}
   - {fileID: 1167446573}
   - {fileID: 410087041}
+  - {fileID: 732836873}

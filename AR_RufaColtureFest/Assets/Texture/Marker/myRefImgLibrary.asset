@@ -16,4 +16,24 @@ MonoBehaviour:
   m_GuidHigh: 18294497920695474075
   m_DataStore:
     m_Storage: []
-  m_Images: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5332656695754988895
+      m_GuidHigh: 8600128863743549591
+    m_SerializedTextureGuid:
+      m_GuidLow: 9859662723783955691
+      m_GuidHigh: 18210240872277807019
+    m_Size: {x: 0.18, y: 0.18}
+    m_SpecifySize: 1
+    m_Name: MKR_0
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5366686831109556936
+      m_GuidHigh: 6509989706947843991
+    m_SerializedTextureGuid:
+      m_GuidLow: 5189352486629087141
+      m_GuidHigh: 17092735977595043416
+    m_Size: {x: 0.18, y: 0.18}
+    m_SpecifySize: 1
+    m_Name: MKR_1
+    m_Texture: {fileID: 0}
