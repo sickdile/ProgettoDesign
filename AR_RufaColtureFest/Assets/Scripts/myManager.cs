@@ -34,7 +34,7 @@ public class myManager : MonoBehaviour
 
     void OnAnchorChanged(ARTrackablesChangedEventArgs<ARAnchor> eventArgs)
     {
-        foreach (var anchor in eventArgs.updated)
+        foreach (var anchor in eventArgs.added)
         {
             string text = "ID: " + anchor.trackableId.ToString() + " Sub1: " + anchor.trackableId.subId1.ToString() + " Sub2: " + anchor.trackableId.subId2.ToString();
             debug.SetText(text);
