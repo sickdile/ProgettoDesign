@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "myInputActions",
+    "maps": [
+        {
+            "name": "Touchscreen",
+            "id": "23cad860-4dc5-4e0a-a8c7-0debae94be7b",
+            "actions": [
+                {
+                    "name": "Tap",
+                    "type": "Value",
+                    "id": "415bc85a-8eec-49ef-82d0-5d5a87132db9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8cd7d469-e7bd-4829-8a00-5d5f8c1684fa",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MyARManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject testPref;
+    [SerializeField] SO_Events refTo_SO_Events;
+
+    private void OnEnable()
     {
-        
+        refTo_SO_Events.evt_placeObject.AddListener(InstantiateCurrentObjectOn);
+    }
+    private void OnDisable()
+    {
+        refTo_SO_Events.evt_placeObject.RemoveAllListeners();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InstantiateCurrentObjectOn(Pose _pose)
     {
-        
+        Instantiate(testPref, _pose.position, _pose.rotation);
     }
 }
