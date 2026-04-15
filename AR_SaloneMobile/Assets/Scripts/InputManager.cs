@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     ARRaycastManager raycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     [SerializeField] SO_Events refTo_SO_Events;
+    [SerializeField] SO_Data refTo_SO_Data;
 
     private void Start()
     {
@@ -33,6 +34,5 @@ public class InputManager : MonoBehaviour
             }
         }
     }
-
 }
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59a58e97955fff048bb1e57026daef0a, type: 3}
-  m_Name: SO_Events_inst
+  m_Name: SO_Events_asset
   m_EditorClassIdentifier: 
   evt_placeObject:
     m_PersistentCalls:
