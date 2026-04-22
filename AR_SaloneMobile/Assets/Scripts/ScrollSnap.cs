@@ -1,16 +1,27 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScrollSnap : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] ScrollRect scrollRect;
+    [SerializeField] RectTransform contentPanel;
+    [SerializeField] RectTransform sampleListItem;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] HorizontalLayoutGroup HLG;
+
+    [SerializeField] TMP_Text nameLabelField;
+    [SerializeField] SO_Data refTo_SO_Data;
+
+    private void Update()
     {
-        
+        int currentItem = Mathf.RoundToInt(-contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)-1);
+        Debug.Log($"Current item is {currentItem}");
+
+        if (scrollRect.velocity.magnitude < 100) {
+            contentPanel.localPosition = new Vector3
+                (-(currentItem+1)*(sampleListItem .rect.width + HLG.spacing),
+                contentPanel.localPosition.y, contentPanel.localPosition.z);
+        }
     }
 }

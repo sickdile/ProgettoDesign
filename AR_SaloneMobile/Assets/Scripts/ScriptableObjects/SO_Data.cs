@@ -6,6 +6,7 @@ public class SO_Data : ScriptableObject
 {
     public int currentObjIndex { get; private set; }
     public GameObject[] objPrefabs;
+    public string[] onjNames;
 
     private void OnEnable()
     {
