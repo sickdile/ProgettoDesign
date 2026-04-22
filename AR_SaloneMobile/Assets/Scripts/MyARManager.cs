@@ -29,6 +29,6 @@ public class MyARManager : MonoBehaviour
     }
     public void RemoveObjectFromScene()
     {
-        Destroy(currentObjectInstantiated);
+        if (currentObjectInstantiated != null) Destroy(currentObjectInstantiated);
     }
 }

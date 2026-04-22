@@ -10,7 +10,7 @@ public class SO_Events : ScriptableObject
 
     private void OnEnable()
     {
-        if (evt_placeObject == null) evt_placeObject = new UnityEvent<Pose>();
         if (evt_placeObject == null) evt_removeObject = new UnityEvent();
+        if (evt_placeObject == null) evt_placeObject = new UnityEvent<Pose>();
     }
 }
