@@ -1,0 +1,11 @@
+﻿<Solution>
+  <Project Path="VFolders.csproj" />
+  <Project Path="RBG.Mulligan.csproj" />
+  <Project Path="VHierarchy.csproj" />
+  <Project Path="VTabs.csproj" />
+  <Project Path="VInspector.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj" />
+</Solution>
