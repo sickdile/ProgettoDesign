@@ -1,10 +1,12 @@
-using Object = UnityEngine.Object;
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using Object = UnityEngine.Object;
 
-namespace BetterLog
+namespace Plugins.BetterDebugger
 {
 	
-	[AddComponentMenu("BetterLog/Log")]
+	[AddComponentMenu("BetterDebugger/Receiver")]
 	public class SortLog : MonoBehaviour
 	{
 		[Header("Settings")]
@@ -13,31 +15,32 @@ namespace BetterLog
 		[SerializeField]
 		string prefix;
 		[SerializeField]
-		Color prefixColor;
+		Color prefixColor =  new Color(255, 0, 0, 255);
 		
 		string hexColor;
 		
-		public event UnityEvent<object, Object> ue_message;
+		[NonSerialized]
+		public UnityEvent<object, Object> ue_Log;
 		
 		void OnValidate()
 		{
 			hexColor = "#"+ColorUtility.ToHtmlStringRGBA(prefixColor);
 		}
-		
-		private void Awake() 
+
+		void Awake()
 		{
-			if(ue_message == null) ue_message = new UnityEvent<object, Object>();
+			ue_Log ??= new UnityEvent<object, Object>();
 		}
-		
-		private void Start()
+
+		void Start()
 		{
-			ue_message.AddListener(Log);
+			ue_Log.AddListener(Log);
 		}
-		
-		public void Log(object _message, Object _sender)
+
+		void Log(object _message, Object _sender)
 		{
 			if(!showLogs) return;
-			Debug.Log($"<color={prefixColor}>{prefix}: {_message}", _sender);
+			Debug.Log($"<color={hexColor}>{prefix}: {_message}", _sender);
 		}
 	}
 }

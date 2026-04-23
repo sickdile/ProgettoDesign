@@ -1,22 +1,17 @@
-using Object = UnityEngine.Object;
 using UnityEngine;
 
-namespace BetterLog
+namespace Plugins.BetterDebugger
 {
+	[AddComponentMenu("BetterDebugger/Sender")]
 	public class AutomaticSender : MonoBehaviour
 	{
 		[Header("Reference")]
 		[SerializeField]
 		SortLog sortLog;
 		
-		void Start()
+		public void SendLog(object _message, Object _sender)
 		{
-			sortLog.ue_message.AddListener(SendLog());
-		}
-		
-		public void SendLog()
-		{
-			
+			sortLog.ue_Log.Invoke(_message, _sender);
 		}
 	}
 }
