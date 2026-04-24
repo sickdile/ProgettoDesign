@@ -10,6 +10,7 @@ public class MyARManager : MonoBehaviour
 
     [NonSerialized] public GameObject currentObjectInstantiated;
 
+
     #region INIT
     private void OnEnable()
     {
@@ -37,6 +38,7 @@ public class MyARManager : MonoBehaviour
     {
         GameObject obj = refTo_SO_Data.objPrefabs[refTo_SO_Data.currentObjIndex];
         currentObjectInstantiated = Instantiate(obj, _pose.position, _pose.rotation);
+        refTo_SO_Events.evt_UIPressed.Invoke();
     }
 
     /// <summary>
@@ -45,6 +47,7 @@ public class MyARManager : MonoBehaviour
     public void RemoveObjectFromScene()
     {
         if (currentObjectInstantiated != null) Destroy(currentObjectInstantiated);
+        refTo_SO_Events.evt_UIPressed.Invoke();
     }
 
 

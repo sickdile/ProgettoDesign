@@ -21,3 +21,12 @@ MonoBehaviour:
   - {fileID: 6776804353217194180, guid: 0c72f34003d503e46967b34fd3530503, type: 3}
   - {fileID: 6776804353217194180, guid: 700b54693b57a9f418a7d6b0936cf974, type: 3}
   - {fileID: 6776804353217194180, guid: 97c14bbb0a0f68b4daaad676e74253b2, type: 3}
+  objNames:
+  - Bellissimo oggetto 1
+  - Fantastico accrocco 2
+  - Allucinante cazzillo 3
+  - Meravigliosa patacca 4
+  - Irremissimile gingillo 5
+  - 'Pazzesco ammennicolo 6 '
+  - Sgravatissimo coso 7
+  - Ho finito i sinonimi 8

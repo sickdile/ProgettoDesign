@@ -8,7 +8,6 @@ public class SO_Data : ScriptableObject
     public GameObject[] objPrefabs;
     public string[] objNames;
 
-
     private void OnEnable()
     {
         currentObjIndex = 0;
