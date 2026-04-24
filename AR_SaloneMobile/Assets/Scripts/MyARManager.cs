@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.ARFoundation;
 
 public class MyARManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class MyARManager : MonoBehaviour
 
     [NonSerialized] public GameObject currentObjectInstantiated;
 
+
+    [SerializeField] ARPlaneManager planeManager;
 
     #region INIT
     private void OnEnable()
@@ -26,10 +29,16 @@ public class MyARManager : MonoBehaviour
     }
     #endregion
 
+    private void Start()
+    {
+        
+    }
+
     public void SetCurrentObject(int _id)
     {
         refTo_SO_Data.SetIndex(_id);
         Debug.Log($"Ho cambiato indice in {_id}");
+
     }
 
     /// <summary>
@@ -38,6 +47,10 @@ public class MyARManager : MonoBehaviour
     /// <param name="_pose"></param>
     public void InstantiateCurrentObjectOn(Pose _pose)
     {
+        foreach (var plane in planeManager.trackables)
+        {
+            plane.GetComponent<ARPlaneMeshVisualizer>().enabled = false;
+        }
         GameObject obj = refTo_SO_Data.objPrefabs[refTo_SO_Data.currentObjIndex];
         currentObjectInstantiated = Instantiate(obj, _pose.position, _pose.rotation);
         refTo_SO_Events.evt_UIPressed.Invoke();
@@ -48,6 +61,10 @@ public class MyARManager : MonoBehaviour
     /// </summary>
     public void RemoveObjectFromScene()
     {
+        foreach (var plane in planeManager.trackables)
+        {
+            plane.GetComponent<ARPlaneMeshVisualizer>().enabled = true;
+        }
         if (currentObjectInstantiated != null) Destroy(currentObjectInstantiated);
     }
 
