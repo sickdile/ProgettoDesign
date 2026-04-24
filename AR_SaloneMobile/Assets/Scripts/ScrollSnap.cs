@@ -26,6 +26,8 @@ public class ScrollSnap : MonoBehaviour
     {
         rectWidth = sampleListItem.rect.width;
         hlgSpacing = HLG.spacing;
+        nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
+
     }
 
     private void Update()
@@ -51,6 +53,8 @@ public class ScrollSnap : MonoBehaviour
 
                 hasSnapped = true;
                 refTo_SO_events.evt_newObjectSelected.Invoke(currentItem - 1);
+                nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
+
             }
         }
         if (scrollRect.velocity.magnitude > 200)
