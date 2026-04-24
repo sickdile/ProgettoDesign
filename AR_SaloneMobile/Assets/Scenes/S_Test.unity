@@ -466,6 +466,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refTo_SO_Data: {fileID: 11400000, guid: 9a26466822d0757448c44db45b235cf5, type: 2}
+  refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
+  canvasAnimator: {fileID: 278526235}
 --- !u!4 &180322682
 Transform:
   m_ObjectHideFlags: 0
@@ -2914,7 +2916,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1713645597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180322681}
+        m_TargetAssemblyTypeName: UiUtilities, Assembly-CSharp
+        m_MethodName: Button_RemoveObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1713645597
 MonoBehaviour:
   m_ObjectHideFlags: 0

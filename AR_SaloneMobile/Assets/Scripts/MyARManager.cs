@@ -21,6 +21,8 @@ public class MyARManager : MonoBehaviour
     private void OnDisable()
     {
         refTo_SO_Events.evt_placeObject.RemoveAllListeners();
+        refTo_SO_Events.evt_newObjectSelected.RemoveAllListeners();
+        refTo_SO_Events.evt_removeObject.RemoveAllListeners();
     }
     #endregion
 
@@ -47,7 +49,6 @@ public class MyARManager : MonoBehaviour
     public void RemoveObjectFromScene()
     {
         if (currentObjectInstantiated != null) Destroy(currentObjectInstantiated);
-        refTo_SO_Events.evt_UIPressed.Invoke();
     }
 
 
