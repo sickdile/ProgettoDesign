@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: SO_Data_asset
   m_EditorClassIdentifier: 
   objPrefabs:
-  - {fileID: 6776804353217194180, guid: 4e3c8cd98f50235409555322c1bf4723, type: 3}
-  - {fileID: 6776804353217194180, guid: 75324278db464dd409ce9b59ccaf0954, type: 3}
-  - {fileID: 6776804353217194180, guid: d1494d415769d3149a01f8039653712c, type: 3}
-  - {fileID: 6776804353217194180, guid: b58fb3dd59a170a47936d3256ec09145, type: 3}
-  - {fileID: 6776804353217194180, guid: 407157bc90727ab4c8963a36c67013f7, type: 3}
-  - {fileID: 6776804353217194180, guid: 0c72f34003d503e46967b34fd3530503, type: 3}
-  - {fileID: 6776804353217194180, guid: 700b54693b57a9f418a7d6b0936cf974, type: 3}
-  - {fileID: 6776804353217194180, guid: 97c14bbb0a0f68b4daaad676e74253b2, type: 3}
+  - {fileID: 7747750917813921528, guid: 8148059ab1d2f4240badd1c75b33527a, type: 3}
+  - {fileID: 8986042059909320816, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
+  - {fileID: 8101379951567580097, guid: 7a0ef5fcf7030ca41b11400de97dadf5, type: 3}
+  - {fileID: 3351935570542676540, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
+  - {fileID: 6163932519184016700, guid: 89c6e84d0273f56429ae87e7b3fa9dc4, type: 3}
+  - {fileID: 1469539845788280300, guid: b028410ccc9686b4480607ab2df15325, type: 3}
+  - {fileID: 5928501600415323081, guid: 04a9e55b3b2eb094ea02d98eada4dd31, type: 3}
+  - {fileID: 6349001428442858514, guid: 4a2cc2983d5bd2e4c9871b37dcb01ef3, type: 3}
   objNames:
-  - Bellissimo oggetto 1
-  - Fantastico accrocco 2
-  - Allucinante cazzillo 3
-  - Meravigliosa patacca 4
-  - Irremissimile gingillo 5
-  - 'Pazzesco ammennicolo 6 '
-  - Sgravatissimo coso 7
-  - Ho finito i sinonimi 8
+  - DUROCCO - Alara Celayir
+  - Me&Us ??? - Chiara ???
+  - 2in1 - Elisa Tiberi
+  - Culi Stellari - Giulia Barbaliscia
+  - Scoliosis - Giulia Barbaliscia
+  - ' Black Mountain - Letizia Domilici'
+  - Muzzle - Mika Black
+  - QUOKA - Yasmin Mammadli
