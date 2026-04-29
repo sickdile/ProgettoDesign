@@ -211,6 +211,11 @@ MonoBehaviour:
   project_displace: 0.35
   project_timeToDisplace: 1
   project_easeType: 3
+  cv_ProjectPage: {fileID: 3577923131241247661}
+  projectPage_timeToFade: 0.2
+  projectPage_EaseFade: 3
+  cv_Project_01: {fileID: 9001024029822939523}
+  cv_Project_02: {fileID: 9165116174209453606}
 --- !u!114 &5236796716094787308
 MonoBehaviour:
   m_ObjectHideFlags: 0

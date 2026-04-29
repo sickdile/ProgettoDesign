@@ -1,42 +1,43 @@
+using System;
 using UnityEngine;
 
-public class WorldManager : MonoBehaviour
+namespace Managers
 {
-    [Header("Reference")]
-    [SerializeField]
-    EventHandler eventHandler;
-
-    private Project currentProject;
-
-    enum Project
+    public class WorldManager : MonoBehaviour
     {
-        none,
-        Project_01,
-        Project_02
-    }
+        [Header("Reference")]
+        [SerializeField]
+        EventHandler eventHandler;
 
-    private void OnEnable()
-    {
-        eventHandler.ev_Project?.AddListener(SetCurrentProject);
-    }
+        private Project currentProject;
 
-    private void SetCurrentProject(int _proj_index)
-    {
-        currentProject = SelectProject(_proj_index);
-    }
-
-    Project SelectProject(int _proj_index)
-    {
-        switch (_proj_index)
+        enum Project
         {
-            case 0:
-                return Project.none;
-            case 1:
-                return Project.Project_01;
-            case 2:
-                return Project.Project_02;
-            default:
-                return Project.none;
+            None,
+            Project_01,
+            Project_02
+        }
+
+        private void OnEnable()
+        {
+            eventHandler.ev_Project?.AddListener(SetCurrentProject);
+        }
+
+        private void SetCurrentProject(int _proj_Index)
+        {
+            currentProject = SelectProject(_proj_Index);
+            return;
+
+            Project SelectProject(int _proj)
+            {
+                return _proj switch
+                {
+                    0 => Project.None,
+                    1 => Project.Project_01,
+                    2 => Project.Project_02,
+                    _ => throw new ArgumentOutOfRangeException()
+                };
+            }
         }
     }
 }
