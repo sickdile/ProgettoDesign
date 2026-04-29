@@ -1,18 +1,24 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "EventHandler", menuName = "Event/EventHandler")]
-public class EventHandler : ScriptableObject
+namespace ScriptableObject
 {
-    public UnityEvent<int> ev_Project;
-
-    private void OnEnable()
+    [CreateAssetMenu(fileName = "EventHandler", menuName = "Event/EventHandler")]
+    public class EventHandler : UnityEngine.ScriptableObject
     {
-        ev_Project ??= new UnityEvent<int>();
-    }
+        public UnityEvent<int> ev_Project;
+        public UnityEvent ev_loadProject;
 
-    private void OnDisable()
-    {
-        ev_Project = null;
+        private void OnEnable()
+        {
+            ev_Project ??= new UnityEvent<int>();
+            ev_loadProject ??= new UnityEvent();
+        }
+
+        private void OnDisable()
+        {
+            ev_Project = null;
+            ev_loadProject = null;
+        }
     }
 }
