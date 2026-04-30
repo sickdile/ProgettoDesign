@@ -208,12 +208,18 @@ MonoBehaviour:
   myCanvas: {fileID: 2185472694161528036}
   cv_Project: {fileID: 7318479447426333220}
   eventHandler: {fileID: 11400000, guid: 96c9289b5ce6ca146b13808e4f7a1598, type: 2}
-  project_displace: 0.35
+  project_displace: 350
+  btn_SelectProject01: {fileID: 5577285848952781049}
+  btn_SelectProject02: {fileID: 6364228160336532890}
+  btn_LoadProject: {fileID: 850250615490624439}
   buttons_selector:
   - {fileID: 5577285848952781049}
   - {fileID: 6364228160336532890}
   project_timeToDisplace: 1
   project_easeType: 3
+  buttonScaleMultiplier: 1.2
+  buttonFeedbackTime: 0.2
+  buttonFeedbackEaseType: 30
   buttonCooldown: 10
   cv_ProjectPage: {fileID: 3577923131241247661}
   projectPage_timeToFade: 0.1

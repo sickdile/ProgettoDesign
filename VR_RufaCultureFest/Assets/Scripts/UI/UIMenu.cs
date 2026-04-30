@@ -12,23 +12,30 @@ namespace UI
     [RequireComponent(typeof(AutomaticSender))]
     public class UIMenu : MonoBehaviour
     {
-        
         // TODO - Disattivare i bottoni per 10 secondi dopo averne premuto uno
         // TODO - polish animazione bottoni on clicked on deselected e on selected
         // TODO - Sprite bottoni
-        
+
         [Header("Reference")] [SerializeField] Camera mainCamera;
         [SerializeField] Canvas myCanvas;
         [SerializeField] CanvasGroup cv_Project;
         [SerializeField] EventHandler eventHandler;
 
-        [Header("Project button")] 
-        [SerializeField] float project_displace = 350f;
+        [Header("Project button")] [SerializeField]
+        float project_displace = 350f;
         
+        [SerializeField] Button btn_SelectProject01;
+        [SerializeField] Button btn_SelectProject02;
+        [SerializeField] Button btn_LoadProject;
+
         [SerializeField] Button[] buttons_selector;
 
         [SerializeField] float project_timeToDisplace = 1f;
         [SerializeField] Ease project_easeType = Ease.OutSine;
+
+        [SerializeField] float buttonScaleMultiplier = 1.2f;
+        [SerializeField] float buttonFeedbackTime = 0.2f;
+        [SerializeField] Ease buttonFeedbackEaseType = Ease.OutBounce;
 
         [SerializeField] float buttonCooldown = 10f;
 
@@ -60,14 +67,14 @@ namespace UI
             Project_01,
             Project_02
         }
-        
+
         // Generic CT
         CancellationToken destroyCt;
         CancellationToken exitCt;
-        
+
         // Specific CT
         CancellationToken ct_ButtonCooldown;
-        
+
         void Awake()
         {
             // Assegnazione Token di cancellazione
@@ -79,15 +86,16 @@ namespace UI
         {
             log = GetComponent<AutomaticSender>();
 
-            if(mainCamera != null)
+            if (mainCamera != null)
             {
                 myCanvas.worldCamera = mainCamera;
-            } else log?.SendLog("Camera not set", this);
-            
+            }
+            else log?.SendLog("Camera not set", this);
+
             // Setup CT
             using var _linked = CancellationTokenSource.CreateLinkedTokenSource(exitCt, destroyCt);
             ct_ButtonCooldown = _linked.Token;
-            
+
             // Setup 
             SetupUI();
         }
@@ -97,20 +105,23 @@ namespace UI
         public void OnClick_SelectProject01()
         {
             SelectorLogic(ProjectSelected.Project_01);
-            
+            UIClickFeedback(btn_SelectProject01);
+
             _ = ButtonCooldown(buttonCooldown);
         }
 
         public void OnClick_SelectProject02()
         {
             SelectorLogic(ProjectSelected.Project_02);
-            
+            UIClickFeedback(btn_SelectProject02);
+
             _ = ButtonCooldown(buttonCooldown);
         }
 
         public void OnClick_LoadProject()
         {
             eventHandler.ev_loadProject?.Invoke();
+            UIClickFeedback(btn_LoadProject);
         }
 
         #endregion
@@ -121,13 +132,13 @@ namespace UI
             cv_Project_01.gameObject.SetActive(false);
             cv_Project_02.gameObject.SetActive(false);
         }
-        
+
         async Awaitable ButtonCooldown(float _cooldownTimer)
         {
             DeactivateButton();
-            
+
             await Awaitable.WaitForSecondsAsync(_cooldownTimer, ct_ButtonCooldown);
-            
+
             ActivateButton();
         }
 
@@ -148,7 +159,17 @@ namespace UI
                 _button.interactable = true;
             }
         }
-        
+
+        void UIClickFeedback(Button _buttonClicked)
+        {
+            _buttonClicked.transform.DOKill();
+            
+            _buttonClicked.transform.DOScale(buttonScaleMultiplier, buttonFeedbackTime)
+                .SetEase(buttonFeedbackEaseType)
+                .OnComplete(() => _buttonClicked.transform.DOScale(1f, buttonFeedbackTime)
+                    .SetEase(buttonFeedbackEaseType));
+        }
+
         void SelectorLogic(ProjectSelected _tmp_ProjectSelected)
         {
             // Project Choose
@@ -162,11 +183,16 @@ namespace UI
             if (project_Cg_HasMoved) return;
             project_Cg_HasMoved = true;
 
+            var _rt_Cv_Project = cv_Project.GetComponent<RectTransform>();
+
+            var _target_Transform = new Vector2(
+                _rt_Cv_Project.anchoredPosition.x - project_displace, _rt_Cv_Project.anchoredPosition.y);
+
             // UI animation
             var _seq = DOTween.Sequence();
             // Move the ui selector
             _seq.Append(
-                cv_Project.transform.DOMoveX(project_displace, project_timeToDisplace).SetEase(project_easeType));
+                _rt_Cv_Project.DOAnchorPos(_target_Transform, project_timeToDisplace).SetEase(project_easeType));
             // Brings up the confirmation canvas
             _seq.Append(
                 cv_ProjectPage.DOFade(1f, projectPage_timeToFade).SetEase(projectPage_EaseFade));
@@ -228,6 +254,8 @@ namespace UI
         public void TestLoadProject()
         {
             OnClick_LoadProject();
+
+            _ = ButtonCooldown(buttonCooldown);
         }
     }
 }
