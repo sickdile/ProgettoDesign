@@ -29,7 +29,8 @@ public class UiUtilities : MonoBehaviour
 
     public void Button_RemoveObject()
     {
+        refTo_SO_Events.evt_removeObject.Invoke();
         ChangeUI();
-        refTo_SO_Events.evt_removeObject.Invoke(); 
+
     }
 }

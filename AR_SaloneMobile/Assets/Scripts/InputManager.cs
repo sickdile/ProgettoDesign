@@ -21,15 +21,10 @@ public class InputManager : MonoBehaviour
     {
         if (ctx.started)
         {
-            Debug.Log("Tap ricevuto!");
             Vector2 screenPos = ctx.ReadValue<Vector2>();
-
-            Debug.Log("Cliccato su " + screenPos);
             if (raycastManager.Raycast(screenPos, hits, TrackableType.PlaneWithinPolygon))
             {
                 Pose hitPose = hits[0].pose;
-                Debug.Log("Inviato evento");
-
                 refTo_SO_Events.evt_placeObject.Invoke(hitPose);
             }
         }

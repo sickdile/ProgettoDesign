@@ -32,17 +32,11 @@ public class ScrollSnap : MonoBehaviour
 
     private void Update()
     {
-        //int currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x - rectWidth * .5f) / (rectWidth + hlgSpacing));
-        // Debug.Log($"Current item is {currentItem}; Current velocity is {scrollRect.velocity.magnitude}; value of that fker is {currentItem * (rectWidth + hlgSpacing)}");
-
          currentItem = Mathf.RoundToInt(
 
             (Mathf.Abs(contentPanel.position.x)) /
             (rectWidth + hlgSpacing)
             );
-        //Debug.Log($"Current item is {currentItem}; Current velocity is {scrollRect.velocity.magnitude}; value of that fker is {currentItem * (rectWidth + hlgSpacing)}");
-
-        // FIN QUI GIUSTO
 
         if (scrollRect.velocity.magnitude < 100 &&
             !hasSnapped)
@@ -58,19 +52,16 @@ public class ScrollSnap : MonoBehaviour
                 contentPanel.position.z
                 );
 
-            Debug.Log("CHECK: " +  Mathf.Abs(contentPanel.position.x - (currentItem * (rectWidth + hlgSpacing)))
-                +" current index: " + currentItem);
             if (Mathf.Abs(contentPanel.position.x + (currentItem * (rectWidth + hlgSpacing))) < 0.01f)
             {
                 snapSpeed = 0;
 
                 hasSnapped = true;
-                refTo_SO_events.evt_newObjectSelected.Invoke(currentItem - 1);
+                refTo_SO_events.evt_newObjectSelected.Invoke(currentItem);
                 nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
             }
         }
 
-        Debug.Log($"ScrollRect velocity: {scrollRect.velocity.magnitude}");
         if (scrollRect.velocity.magnitude > 100)
         {
             hasSnapped = false;

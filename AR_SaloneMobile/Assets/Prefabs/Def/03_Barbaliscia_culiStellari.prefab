@@ -961,6 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641619859478710550}
+  - component: {fileID: 577379000939589611}
   m_Layer: 0
   m_Name: 03_Barbaliscia_culiStellari
   m_TagString: Untagged
@@ -984,6 +985,19 @@ Transform:
   - {fileID: 5693213357931439021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &577379000939589611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112343138675956339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b4b9f0c3d8b584ba0bd19476dcb6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrefabBehaviour
+  refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
 --- !u!1 &5915411121499028602
 GameObject:
   m_ObjectHideFlags: 0

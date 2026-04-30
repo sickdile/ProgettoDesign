@@ -176,8 +176,8 @@ MonoBehaviour:
   m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_DecelerationRate: 0.01
+  m_ScrollSensitivity: 2
   m_Viewport: {fileID: 328064871}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1280,8 +1280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RectMask2D
-  m_Padding: {x: 0, y: 0, z: 0, w: 0}
-  m_Softness: {x: 625, y: 0}
+  m_Padding: {x: 400, y: 0, z: 400, w: 0}
+  m_Softness: {x: 650, y: 0}
 --- !u!1 &371045235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,6 +2737,7 @@ MonoBehaviour:
   testPref: []
   refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
   refTo_SO_Data: {fileID: 11400000, guid: 9a26466822d0757448c44db45b235cf5, type: 2}
+  currentObjectInstantiated: {fileID: 0}
   planeManager: {fileID: 2512387470422636670}
 --- !u!1 &1556711561
 GameObject:

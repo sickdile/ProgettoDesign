@@ -9,7 +9,7 @@ public class MyARManager : MonoBehaviour
     [SerializeField] SO_Events refTo_SO_Events;
     [SerializeField] SO_Data refTo_SO_Data;
 
-    [NonSerialized] public GameObject currentObjectInstantiated;
+    public GameObject currentObjectInstantiated;
 
 
     [SerializeField] ARPlaneManager planeManager;
@@ -31,7 +31,7 @@ public class MyARManager : MonoBehaviour
 
     private void Start()
     {
-        
+        currentObjectInstantiated = null;
     }
 
     public void SetCurrentObject(int _id)
@@ -47,6 +47,8 @@ public class MyARManager : MonoBehaviour
     /// <param name="_pose"></param>
     public void InstantiateCurrentObjectOn(Pose _pose)
     {
+        if (currentObjectInstantiated != null) return;
+
         foreach (var plane in planeManager.trackables)
         {
             plane.GetComponent<ARPlaneMeshVisualizer>().enabled = false;
@@ -60,12 +62,13 @@ public class MyARManager : MonoBehaviour
     /// Distrugge l'oggetto attualmente istanziato.
     /// </summary>
     public void RemoveObjectFromScene()
-    {
+    {       
+        currentObjectInstantiated= null;
+
         foreach (var plane in planeManager.trackables)
         {
             plane.GetComponent<ARPlaneMeshVisualizer>().enabled = true;
         }
-        if (currentObjectInstantiated != null) Destroy(currentObjectInstantiated);
     }
 
 
