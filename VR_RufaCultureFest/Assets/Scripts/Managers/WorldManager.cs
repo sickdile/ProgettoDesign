@@ -40,7 +40,7 @@ namespace Managers
 
         void LoadCurrentProject()
         {
-            log.SendLog($"Loading {currentProject.ToString()}", this);
+            log?.SendLog($"Loading {currentProject.ToString()}", this);
             
             switch (currentProject)
             {
