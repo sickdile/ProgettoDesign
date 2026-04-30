@@ -10,5 +10,6 @@ public class AutoAssignAdaptivePadding : MonoBehaviour
     {
         HLG = GetComponent<HorizontalLayoutGroup>();
         HLG.padding.left = Mathf.RoundToInt(.5f * (Screen.width - sampleListItem.rect.width));
+        HLG.padding.right = HLG.padding.left;
     }
 }

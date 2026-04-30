@@ -17,11 +17,11 @@ public class ScrollSnap : MonoBehaviour
     float rectWidth;
     float hlgSpacing;
 
-    bool hasSnapped = false;
+    bool hasSnapped = true;
     [SerializeField] float snapSpeed = 0.0f;
     [SerializeField] float snapForce = 1f;
 
-
+    int currentItem = 0;
     private void Start()
     {
         rectWidth = sampleListItem.rect.width;
@@ -32,32 +32,46 @@ public class ScrollSnap : MonoBehaviour
 
     private void Update()
     {
-        int currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x - rectWidth * .5f) / (rectWidth + hlgSpacing));
+        //int currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x - rectWidth * .5f) / (rectWidth + hlgSpacing));
         // Debug.Log($"Current item is {currentItem}; Current velocity is {scrollRect.velocity.magnitude}; value of that fker is {currentItem * (rectWidth + hlgSpacing)}");
 
-        if (scrollRect.velocity.magnitude < 200 && !hasSnapped)
+         currentItem = Mathf.RoundToInt(
+
+            (Mathf.Abs(contentPanel.position.x)) /
+            (rectWidth + hlgSpacing)
+            );
+        //Debug.Log($"Current item is {currentItem}; Current velocity is {scrollRect.velocity.magnitude}; value of that fker is {currentItem * (rectWidth + hlgSpacing)}");
+
+        // FIN QUI GIUSTO
+
+        if (scrollRect.velocity.magnitude < 100 &&
+            !hasSnapped)
         {
             scrollRect.velocity = Vector3.zero;
             snapSpeed += snapForce * Time.deltaTime;
-            Debug.Log("SNAPPING!");
-            contentPanel.localPosition = new Vector3(
-                Mathf.MoveTowards(contentPanel.localPosition.x,
 
-                    0 - (currentItem * (rectWidth + hlgSpacing)) - rectWidth * .5f, snapSpeed),
-                contentPanel.localPosition.y,
-                contentPanel.localPosition.z
+            contentPanel.position = new Vector3(
+                Mathf.MoveTowards(contentPanel.position.x,
+
+                    0 - (currentItem * (rectWidth + hlgSpacing)), snapSpeed),
+                contentPanel.position.y,
+                contentPanel.position.z
                 );
-            if (Mathf.Abs( contentPanel.localPosition.x + rectWidth * .5f+(currentItem * (rectWidth + hlgSpacing))) < 0.001f )
+
+            Debug.Log("CHECK: " +  Mathf.Abs(contentPanel.position.x - (currentItem * (rectWidth + hlgSpacing)))
+                +" current index: " + currentItem);
+            if (Mathf.Abs(contentPanel.position.x + (currentItem * (rectWidth + hlgSpacing))) < 0.01f)
             {
                 snapSpeed = 0;
 
                 hasSnapped = true;
                 refTo_SO_events.evt_newObjectSelected.Invoke(currentItem - 1);
                 nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
-
             }
         }
-        if (scrollRect.velocity.magnitude > 200)
+
+        Debug.Log($"ScrollRect velocity: {scrollRect.velocity.magnitude}");
+        if (scrollRect.velocity.magnitude > 100)
         {
             hasSnapped = false;
             snapSpeed = 0;
