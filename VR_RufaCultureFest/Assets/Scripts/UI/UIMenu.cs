@@ -1,7 +1,9 @@
 using System;
+using System.Threading;
 using DG.Tweening;
 using Plugins.BetterDebugger;
 using UnityEngine;
+using UnityEngine.UI;
 using VInspector;
 using EventHandler = ScriptableObject.EventHandler;
 
@@ -11,16 +13,24 @@ namespace UI
     public class UIMenu : MonoBehaviour
     {
         
+        // TODO - Disattivare i bottoni per 10 secondi dopo averne premuto uno
+        // TODO - polish animazione bottoni on clicked on deselected e on selected
+        // TODO - Sprite bottoni
+        
         [Header("Reference")] [SerializeField] Camera mainCamera;
         [SerializeField] Canvas myCanvas;
         [SerializeField] CanvasGroup cv_Project;
         [SerializeField] EventHandler eventHandler;
 
-        [Header("Project button")] [SerializeField]
-        float project_displace = 350f;
+        [Header("Project button")] 
+        [SerializeField] float project_displace = 350f;
+        
+        [SerializeField] Button[] buttons_selector;
 
         [SerializeField] float project_timeToDisplace = 1f;
         [SerializeField] Ease project_easeType = Ease.OutSine;
+
+        [SerializeField] float buttonCooldown = 10f;
 
         [Header("Project Page")] [SerializeField]
         CanvasGroup cv_ProjectPage;
@@ -50,6 +60,20 @@ namespace UI
             Project_01,
             Project_02
         }
+        
+        // Generic CT
+        CancellationToken destroyCt;
+        CancellationToken exitCt;
+        
+        // Specific CT
+        CancellationToken ct_ButtonCooldown;
+        
+        void Awake()
+        {
+            // Assegnazione Token di cancellazione
+            destroyCt = destroyCancellationToken;
+            exitCt = Application.exitCancellationToken;
+        }
 
         private void Start()
         {
@@ -58,7 +82,11 @@ namespace UI
             if(mainCamera != null)
             {
                 myCanvas.worldCamera = mainCamera;
-            } else log.SendLog("Camera not set", this);
+            } else log?.SendLog("Camera not set", this);
+            
+            // Setup CT
+            using var _linked = CancellationTokenSource.CreateLinkedTokenSource(exitCt, destroyCt);
+            ct_ButtonCooldown = _linked.Token;
             
             // Setup 
             SetupUI();
@@ -69,11 +97,15 @@ namespace UI
         public void OnClick_SelectProject01()
         {
             SelectorLogic(ProjectSelected.Project_01);
+            
+            _ = ButtonCooldown(buttonCooldown);
         }
 
         public void OnClick_SelectProject02()
         {
             SelectorLogic(ProjectSelected.Project_02);
+            
+            _ = ButtonCooldown(buttonCooldown);
         }
 
         public void OnClick_LoadProject()
@@ -85,9 +117,36 @@ namespace UI
 
         void SetupUI()
         {
-            cv_Project.alpha = 0f;
+            cv_ProjectPage.alpha = 0f;
             cv_Project_01.gameObject.SetActive(false);
             cv_Project_02.gameObject.SetActive(false);
+        }
+        
+        async Awaitable ButtonCooldown(float _cooldownTimer)
+        {
+            DeactivateButton();
+            
+            await Awaitable.WaitForSecondsAsync(_cooldownTimer, ct_ButtonCooldown);
+            
+            ActivateButton();
+        }
+
+        void DeactivateButton()
+        {
+            log?.SendLog("Bottoni disattivati", this);
+            foreach (var _button in buttons_selector)
+            {
+                _button.interactable = false;
+            }
+        }
+
+        void ActivateButton()
+        {
+            log?.SendLog("Bottoni attivati", this);
+            foreach (var _button in buttons_selector)
+            {
+                _button.interactable = true;
+            }
         }
         
         void SelectorLogic(ProjectSelected _tmp_ProjectSelected)
@@ -124,7 +183,7 @@ namespace UI
             {
                 case ProjectSelected.None:
                     selectedProject = ProjectSelected.None;
-                    log.SendLog($"Project Selector Error, current selected {_tmp_ProjectSelected.ToString()}", this);
+                    log?.SendLog($"Project Selector Error, current selected {_tmp_ProjectSelected.ToString()}", this);
                     break;
                 case ProjectSelected.Project_01:
                     selectedProject = ProjectSelected.Project_01;
@@ -142,7 +201,7 @@ namespace UI
             switch (selectedProject)
             {
                 case ProjectSelected.None:
-                    log.SendLog($"Project Activation Error, current selected {selectedProject.ToString()}", this);
+                    log?.SendLog($"Project Activation Error, current selected {selectedProject.ToString()}", this);
                     break;
                 case ProjectSelected.Project_01:
                     cv_Project_01.gameObject.SetActive(true);
