@@ -12,92 +12,74 @@ namespace UI
     [RequireComponent(typeof(AutomaticSender))]
     public class UIMenu : MonoBehaviour
     {
-        // TODO - Disattivare i bottoni per 10 secondi dopo averne premuto uno
-        // TODO - polish animazione bottoni on clicked on deselected e on selected
-        // TODO - Sprite bottoni
-
-        [Header("Reference")] [SerializeField] Camera mainCamera;
+        [Header("Reference")] 
+        [SerializeField] Camera mainCamera;
         [SerializeField] Canvas myCanvas;
         [SerializeField] CanvasGroup cv_Project;
         [SerializeField] EventHandler eventHandler;
 
-        [Header("Project button")] [SerializeField]
-        float project_displace = 350f;
-        
+        [Header("Project button")] 
+        [SerializeField] float project_displace = 350f;
         [SerializeField] Button btn_SelectProject01;
         [SerializeField] Button btn_SelectProject02;
         [SerializeField] Button btn_LoadProject;
-
         [SerializeField] Button[] buttons_selector;
-
         [SerializeField] float project_timeToDisplace = 1f;
         [SerializeField] Ease project_easeType = Ease.OutSine;
-
         [SerializeField] float buttonScaleMultiplier = 1.2f;
         [SerializeField] float buttonFeedbackTime = 0.2f;
         [SerializeField] Ease buttonFeedbackEaseType = Ease.OutBounce;
-
         [SerializeField] float buttonCooldown = 10f;
 
-        [Header("Project Page")] [SerializeField]
-        CanvasGroup cv_ProjectPage;
-
+        [Header("Project Page")] 
+        [SerializeField] CanvasGroup cv_ProjectPage;
         [SerializeField] float projectPage_timeToFade;
         [SerializeField] Ease projectPage_EaseFade;
 
-        [Header("Project 01")] [SerializeField]
-        CanvasGroup cv_Project_01;
+        [Header("Project 01")] 
+        [SerializeField] CanvasGroup cv_Project_01;
+        [Header("Project 02")] 
+        [SerializeField] CanvasGroup cv_Project_02;
 
-        [Header("Project 02")] [SerializeField]
-        CanvasGroup cv_Project_02;
+        private AutomaticSender log;
+        private ProjectSelected selectedProject = ProjectSelected.None;
+        private bool project_Cg_HasMoved;
+        private Vector2 originalProjectPos;
+        private RectTransform rt_Project;
 
+        // Gestione corretta dei Token
+        private CancellationTokenSource cts;
 
-        // Component
-        AutomaticSender log;
-
-        // Private variables
-
-        ProjectSelected selectedProject = ProjectSelected.None;
-
-        bool project_Cg_HasMoved;
-
-        public enum ProjectSelected
-        {
-            None,
-            Project_01,
-            Project_02
-        }
-
-        // Generic CT
-        CancellationToken destroyCt;
-        CancellationToken exitCt;
-
-        // Specific CT
-        CancellationToken ct_ButtonCooldown;
+        public enum ProjectSelected { None, Project_01, Project_02 }
 
         void Awake()
         {
-            // Assegnazione Token di cancellazione
-            destroyCt = destroyCancellationToken;
-            exitCt = Application.exitCancellationToken;
+            log = GetComponent<AutomaticSender>();
+            rt_Project = cv_Project.GetComponent<RectTransform>();
         }
 
         private void Start()
         {
-            log = GetComponent<AutomaticSender>();
-
-            if (mainCamera != null)
-            {
-                myCanvas.worldCamera = mainCamera;
-            }
+            if (mainCamera != null) myCanvas.worldCamera = mainCamera;
             else log?.SendLog("Camera not set", this);
+            originalProjectPos = cv_Project.GetComponent<RectTransform>().anchoredPosition;
 
-            // Setup CT
-            using var _linked = CancellationTokenSource.CreateLinkedTokenSource(exitCt, destroyCt);
-            ct_ButtonCooldown = _linked.Token;
-
-            // Setup 
             SetupUI();
+        }
+
+        void OnEnable()
+        {
+            SetupUI();
+        }
+
+        private void OnDisable()
+        {
+            CancelCooldown();
+        }
+
+        private void OnDestroy()
+        {
+            cts?.Dispose();
         }
 
         #region UNITY-BUTTONS
@@ -106,16 +88,14 @@ namespace UI
         {
             SelectorLogic(ProjectSelected.Project_01);
             UIClickFeedback(btn_SelectProject01);
-
-            _ = ButtonCooldown(buttonCooldown);
+            _ = StartCooldown(buttonCooldown);
         }
 
         public void OnClick_SelectProject02()
         {
             SelectorLogic(ProjectSelected.Project_02);
             UIClickFeedback(btn_SelectProject02);
-
-            _ = ButtonCooldown(buttonCooldown);
+            _ = StartCooldown(buttonCooldown);
         }
 
         public void OnClick_LoadProject()
@@ -128,134 +108,100 @@ namespace UI
 
         void SetupUI()
         {
+            project_Cg_HasMoved = false;
+            cv_Project.GetComponent<RectTransform>().anchoredPosition = originalProjectPos;
             cv_ProjectPage.alpha = 0f;
             cv_Project_01.gameObject.SetActive(false);
             cv_Project_02.gameObject.SetActive(false);
         }
 
-        async Awaitable ButtonCooldown(float _cooldownTimer)
+        private async Awaitable StartCooldown(float _duration)
         {
+            CancelCooldown();
+            cts = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken);
+
             DeactivateButton();
 
-            await Awaitable.WaitForSecondsAsync(_cooldownTimer, ct_ButtonCooldown);
+            try
+            {
+                await Awaitable.WaitForSecondsAsync(_duration, cts.Token);
+            }
+            catch (OperationCanceledException)
+            {
+                
+            }
+            catch (Exception _e)
+            {
+                log?.SendLog($"Cooldown error: {_e.Message}", this);
+            }
+            finally
+            {
+                if (this != null && gameObject.activeInHierarchy)
+                {
+                    ActivateButton();
+                }
+            }
+        }
 
-            ActivateButton();
+        private void CancelCooldown()
+        {
+            if (cts == null) return;
+            cts.Cancel();
+            cts.Dispose();
+            cts = null;
         }
 
         void DeactivateButton()
         {
             log?.SendLog("Bottoni disattivati", this);
-            foreach (var _button in buttons_selector)
-            {
-                _button.interactable = false;
-            }
+            foreach (var _b in buttons_selector) _b.interactable = false;
         }
 
         void ActivateButton()
         {
             log?.SendLog("Bottoni attivati", this);
-            foreach (var _button in buttons_selector)
-            {
-                _button.interactable = true;
-            }
+            foreach (var _b in buttons_selector) _b.interactable = true;
         }
 
-        void UIClickFeedback(Button _buttonClicked)
+        void UIClickFeedback(Button _b)
         {
-            _buttonClicked.transform.DOKill();
-            
-            _buttonClicked.transform.DOScale(buttonScaleMultiplier, buttonFeedbackTime)
+            _b.transform.DOKill();
+            _b.transform.DOScale(buttonScaleMultiplier, buttonFeedbackTime)
                 .SetEase(buttonFeedbackEaseType)
-                .OnComplete(() => _buttonClicked.transform.DOScale(1f, buttonFeedbackTime)
+                .OnComplete(() => _b.transform.DOScale(1f, buttonFeedbackTime)
                     .SetEase(buttonFeedbackEaseType));
         }
 
-        void SelectorLogic(ProjectSelected _tmp_ProjectSelected)
+        void SelectorLogic(ProjectSelected _tmp)
         {
-            // Project Choose
-            ProjectSelector(_tmp_ProjectSelected);
+            ProjectSelector(_tmp);
             ProjectActivation();
+            eventHandler.ev_Project?.Invoke((int)selectedProject);
 
-            // Send event with current project
-            eventHandler.ev_Project?.Invoke(ProjectToIntConverter(selectedProject));
-
-            // Do Once
             if (project_Cg_HasMoved) return;
             project_Cg_HasMoved = true;
+            
+            var _target = new Vector2(rt_Project.anchoredPosition.x - project_displace, rt_Project.anchoredPosition.y);
 
-            var _rt_Cv_Project = cv_Project.GetComponent<RectTransform>();
-
-            var _target_Transform = new Vector2(
-                _rt_Cv_Project.anchoredPosition.x - project_displace, _rt_Cv_Project.anchoredPosition.y);
-
-            // UI animation
             var _seq = DOTween.Sequence();
-            // Move the ui selector
-            _seq.Append(
-                _rt_Cv_Project.DOAnchorPos(_target_Transform, project_timeToDisplace).SetEase(project_easeType));
-            // Brings up the confirmation canvas
-            _seq.Append(
-                cv_ProjectPage.DOFade(1f, projectPage_timeToFade).SetEase(projectPage_EaseFade));
-            return;
-
-            // LOCAL FUNCTION
-            int ProjectToIntConverter(ProjectSelected _currentSelectedProject) => (int)_currentSelectedProject;
+            _seq.Append(rt_Project.DOAnchorPos(_target, project_timeToDisplace).SetEase(project_easeType));
+            _seq.Append(cv_ProjectPage.DOFade(1f, projectPage_timeToFade).SetEase(projectPage_EaseFade));
         }
 
-        void ProjectSelector(ProjectSelected _tmp_ProjectSelected)
+        void ProjectSelector(ProjectSelected _tmp)
         {
-            if (_tmp_ProjectSelected == selectedProject) return;
-            switch (_tmp_ProjectSelected)
-            {
-                case ProjectSelected.None:
-                    selectedProject = ProjectSelected.None;
-                    log?.SendLog($"Project Selector Error, current selected {_tmp_ProjectSelected.ToString()}", this);
-                    break;
-                case ProjectSelected.Project_01:
-                    selectedProject = ProjectSelected.Project_01;
-                    break;
-                case ProjectSelected.Project_02:
-                    selectedProject = ProjectSelected.Project_02;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            selectedProject = _tmp;
         }
 
         void ProjectActivation()
         {
-            switch (selectedProject)
-            {
-                case ProjectSelected.None:
-                    log?.SendLog($"Project Activation Error, current selected {selectedProject.ToString()}", this);
-                    break;
-                case ProjectSelected.Project_01:
-                    cv_Project_01.gameObject.SetActive(true);
-                    cv_Project_02.gameObject.SetActive(false);
-                    break;
-                case ProjectSelected.Project_02:
-                    cv_Project_02.gameObject.SetActive(true);
-                    cv_Project_01.gameObject.SetActive(false);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
-        // BUTTONS TEST
-
-        [Button]
-        public void TestButtonLogic(ProjectSelected _tmp_ProjectSelected)
-        {
-            SelectorLogic(_tmp_ProjectSelected);
+            cv_Project_01.gameObject.SetActive(selectedProject == ProjectSelected.Project_01);
+            cv_Project_02.gameObject.SetActive(selectedProject == ProjectSelected.Project_02);
         }
 
         [Button]
-        public void TestLoadProject()
-        {
-            OnClick_LoadProject();
-
-            _ = ButtonCooldown(buttonCooldown);
-        }
+        public void TestButtonLogic(ProjectSelected _tmp) => SelectorLogic(_tmp);
+        [Button]
+        public void TestButtonActivation() => OnClick_LoadProject();
     }
 }
