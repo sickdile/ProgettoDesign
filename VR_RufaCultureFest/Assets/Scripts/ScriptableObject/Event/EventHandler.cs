@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ScriptableObject
+namespace ScriptableObject.Event
 {
     [CreateAssetMenu(fileName = "EventHandler", menuName = "Event/EventHandler")]
     public class EventHandler : UnityEngine.ScriptableObject

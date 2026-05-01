@@ -5,7 +5,7 @@ using Plugins.BetterDebugger;
 using UnityEngine;
 using UnityEngine.UI;
 using VInspector;
-using EventHandler = ScriptableObject.EventHandler;
+using EventHandler = ScriptableObject.Event.EventHandler;
 
 namespace UI
 {
@@ -35,20 +35,22 @@ namespace UI
         [SerializeField] CanvasGroup cv_ProjectPage;
         [SerializeField] float projectPage_timeToFade;
         [SerializeField] Ease projectPage_EaseFade;
+        [SerializeField] float resetUI_time = 20f;
 
         [Header("Project 01")] 
         [SerializeField] CanvasGroup cv_Project_01;
         [Header("Project 02")] 
         [SerializeField] CanvasGroup cv_Project_02;
 
-        private AutomaticSender log;
-        private ProjectSelected selectedProject = ProjectSelected.None;
-        private bool project_Cg_HasMoved;
-        private Vector2 originalProjectPos;
-        private RectTransform rt_Project;
+        AutomaticSender log;
+        ProjectSelected selectedProject = ProjectSelected.None;
+        bool project_Cg_HasMoved;
+        Vector2 originalProjectPos;
+        RectTransform rt_Project;
 
         // Gestione corretta dei Token
-        private CancellationTokenSource cts;
+        CancellationTokenSource cts_ButtonCooldown;
+        CancellationTokenSource cts_ResetUi;
 
         public enum ProjectSelected { None, Project_01, Project_02 }
 
@@ -79,7 +81,7 @@ namespace UI
 
         private void OnDestroy()
         {
-            cts?.Dispose();
+            cts_ButtonCooldown?.Dispose();
         }
 
         #region UNITY-BUTTONS
@@ -109,22 +111,50 @@ namespace UI
         void SetupUI()
         {
             project_Cg_HasMoved = false;
-            cv_Project.GetComponent<RectTransform>().anchoredPosition = originalProjectPos;
             cv_ProjectPage.alpha = 0f;
             cv_Project_01.gameObject.SetActive(false);
             cv_Project_02.gameObject.SetActive(false);
+            
+            rt_Project.DOAnchorPos(originalProjectPos, project_timeToDisplace).SetEase(project_easeType);
+            
+            log?.SendLog("UI Setup", this);
+        }
+
+        private async Awaitable ResetUI(float _duration)
+        {
+            cts_ResetUi = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken);
+
+            try
+            {
+                await Awaitable.WaitForSecondsAsync(_duration, cts_ResetUi.Token);
+            }
+            catch (OperationCanceledException)
+            {
+
+            }
+            catch (Exception _e)
+            {
+                log?.SendLog($"Cooldown UI error: {_e.Message}", this);
+            }
+            finally
+            {
+                if (this != null && gameObject.activeInHierarchy)
+                {
+                    SetupUI();
+                }
+            }
         }
 
         private async Awaitable StartCooldown(float _duration)
         {
             CancelCooldown();
-            cts = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken);
+            cts_ButtonCooldown = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken);
 
             DeactivateButton();
 
             try
             {
-                await Awaitable.WaitForSecondsAsync(_duration, cts.Token);
+                await Awaitable.WaitForSecondsAsync(_duration, cts_ButtonCooldown.Token);
             }
             catch (OperationCanceledException)
             {
@@ -132,7 +162,7 @@ namespace UI
             }
             catch (Exception _e)
             {
-                log?.SendLog($"Cooldown error: {_e.Message}", this);
+                log?.SendLog($"Cooldown Button error: {_e.Message}", this);
             }
             finally
             {
@@ -145,10 +175,10 @@ namespace UI
 
         private void CancelCooldown()
         {
-            if (cts == null) return;
-            cts.Cancel();
-            cts.Dispose();
-            cts = null;
+            if (cts_ButtonCooldown == null) return;
+            cts_ButtonCooldown.Cancel();
+            cts_ButtonCooldown.Dispose();
+            cts_ButtonCooldown = null;
         }
 
         void DeactivateButton()
@@ -180,6 +210,8 @@ namespace UI
 
             if (project_Cg_HasMoved) return;
             project_Cg_HasMoved = true;
+            
+            _ = ResetUI(buttonCooldown + resetUI_time);
             
             var _target = new Vector2(rt_Project.anchoredPosition.x - project_displace, rt_Project.anchoredPosition.y);
 

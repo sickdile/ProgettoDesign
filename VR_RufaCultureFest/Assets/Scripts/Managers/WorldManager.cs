@@ -1,7 +1,7 @@
 using System;
 using Plugins.BetterDebugger;
 using UnityEngine;
-using EventHandler = ScriptableObject.EventHandler;
+using EventHandler = ScriptableObject.Event.EventHandler;
 
 namespace Managers
 {

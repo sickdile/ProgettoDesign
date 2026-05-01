@@ -217,13 +217,14 @@ MonoBehaviour:
   - {fileID: 6364228160336532890}
   project_timeToDisplace: 1
   project_easeType: 3
-  buttonScaleMultiplier: 1.2
+  buttonScaleMultiplier: 0.95
   buttonFeedbackTime: 0.2
-  buttonFeedbackEaseType: 30
+  buttonFeedbackEaseType: 27
   buttonCooldown: 10
   cv_ProjectPage: {fileID: 3577923131241247661}
   projectPage_timeToFade: 0.1
   projectPage_EaseFade: 34
+  resetUI_time: 20
   cv_Project_01: {fileID: 9001024029822939523}
   cv_Project_02: {fileID: 9165116174209453606}
 --- !u!114 &5236796716094787308
@@ -1888,7 +1889,7 @@ Transform:
   m_GameObject: {fileID: 8416567072472548410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.287, z: -0.066}
+  m_LocalPosition: {x: 0, y: 1.287, z: -0.017}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
   m_Children:
