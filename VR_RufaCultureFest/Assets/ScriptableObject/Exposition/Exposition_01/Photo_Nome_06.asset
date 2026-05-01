@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e20d8a1fe557714ea886e189a7de2a7, type: 3}
   m_Name: Photo_Nome_06
   m_EditorClassIdentifier: 
-  photoImage: {fileID: 0}
+  photoImage: {fileID: 21300000, guid: b7d681d2dc2978249b6d87a219f7d684, type: 3}
   photoName: Photo_06
-  photoDescription: "Descrizione FOTO _06"
+  photoDescription: Descrizione FOTO _06
   photoAuthor: TEST
   photoDimension: 105 x 100

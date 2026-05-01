@@ -6,20 +6,81 @@ namespace ScriptableObject.Exposition.Editor
 {
     public class PhotoAssetLinker : EditorWindow
     {
-        private const string PHOTOS_FOLDER = "Assets/Photos/Exposition_01";
-        private const string ASSETS_FOLDER = "Assets/ScriptableObject/Exposition/Exposition_01";
+        private string photosFolder = "Assets/Photos/Exposition_01";
+        private string assetsFolder = "Assets/ScriptableObject/Exposition/Exposition_01";
 
         [MenuItem("Tools/Exposition/Link Photo Sprites")]
-        public static void LinkSprites()
+        public static void OpenWindow()
         {
-            // First pass: make sure all images in the photos folder are set as Sprite
+            PhotoAssetLinker window = GetWindow<PhotoAssetLinker>("Photo Asset Linker");
+            window.minSize = new Vector2(500, 180);
+            window.Show();
+        }
+
+        private void OnGUI()
+        {
+            GUILayout.Space(10);
+            GUILayout.Label("Photo Asset Linker", EditorStyles.boldLabel);
+            GUILayout.Space(10);
+
+            // Photos folder row
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Photos Folder", GUILayout.Width(120));
+            photosFolder = GUILayout.TextField(photosFolder);
+            if (GUILayout.Button("Browse", GUILayout.Width(60)))
+            {
+                string selected = EditorUtility.OpenFolderPanel("Select Photos Folder", "Assets", "");
+                if (!string.IsNullOrEmpty(selected))
+                    photosFolder = ConvertToRelativePath(selected);
+            }
+            GUILayout.EndHorizontal();
+
+            GUILayout.Space(6);
+
+            // ScriptableObjects folder row
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("ScriptableObjects Folder", GUILayout.Width(120));
+            assetsFolder = GUILayout.TextField(assetsFolder);
+            if (GUILayout.Button("Browse", GUILayout.Width(60)))
+            {
+                string selected = EditorUtility.OpenFolderPanel("Select ScriptableObjects Folder", "Assets", "");
+                if (!string.IsNullOrEmpty(selected))
+                    assetsFolder = ConvertToRelativePath(selected);
+            }
+            GUILayout.EndHorizontal();
+
+            GUILayout.Space(20);
+
+            // Run button
+            GUI.backgroundColor = new Color(0.4f, 0.8f, 0.4f);
+            if (GUILayout.Button("Link Sprites", GUILayout.Height(35)))
+                LinkSprites();
+            GUI.backgroundColor = Color.white;
+        }
+
+        private void LinkSprites()
+        {
+            if (!Directory.Exists(photosFolder))
+            {
+                EditorUtility.DisplayDialog("Errore", $"Photos folder non trovata:\n{photosFolder}", "OK");
+                return;
+            }
+
+            if (!Directory.Exists(assetsFolder))
+            {
+                EditorUtility.DisplayDialog("Errore", $"ScriptableObjects folder non trovata:\n{assetsFolder}", "OK");
+                return;
+            }
+
+            // First pass: set all images to Sprite (Single mode)
             SetAllTexturesAsSprite();
 
-            string[] assetGuids = AssetDatabase.FindAssets("t:Photo", new[] { ASSETS_FOLDER });
+            string[] assetGuids = AssetDatabase.FindAssets("t:Photo", new[] { assetsFolder });
 
             if (assetGuids.Length == 0)
             {
-                Debug.LogWarning("[PhotoAssetLinker] No Photo ScriptableObjects found in: " + ASSETS_FOLDER);
+                Debug.LogWarning("[PhotoAssetLinker] No Photo ScriptableObjects found in: " + assetsFolder);
+                EditorUtility.DisplayDialog("Attenzione", "Nessun Photo ScriptableObject trovato nella cartella specificata.", "OK");
                 return;
             }
 
@@ -77,14 +138,14 @@ namespace ScriptableObject.Exposition.Editor
             );
         }
 
-        // Sets all textures in the photos folder to Sprite type
-        private static void SetAllTexturesAsSprite()
+        // Sets all textures in the photos folder to Sprite (Single) type
+        private void SetAllTexturesAsSprite()
         {
             string[] extensions = { "*.png", "*.jpg", "*.jpeg", "*.tga", "*.psd", "*.tiff" };
 
             foreach (string ext in extensions)
             {
-                string[] files = Directory.GetFiles(PHOTOS_FOLDER, ext);
+                string[] files = Directory.GetFiles(photosFolder, ext);
 
                 foreach (string file in files)
                 {
@@ -93,11 +154,24 @@ namespace ScriptableObject.Exposition.Editor
 
                     if (importer == null) continue;
 
+                    bool needsReimport = false;
+
                     if (importer.textureType != TextureImporterType.Sprite)
                     {
                         importer.textureType = TextureImporterType.Sprite;
+                        needsReimport = true;
+                    }
+
+                    if (importer.spriteImportMode != SpriteImportMode.Single)
+                    {
+                        importer.spriteImportMode = SpriteImportMode.Single;
+                        needsReimport = true;
+                    }
+
+                    if (needsReimport)
+                    {
                         AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
-                        Debug.Log($"[PhotoAssetLinker] Set as Sprite: {path}");
+                        Debug.Log($"[PhotoAssetLinker] Fixed texture settings: {path}");
                     }
                 }
             }
@@ -106,18 +180,27 @@ namespace ScriptableObject.Exposition.Editor
         }
 
         // Searches for the sprite file matching the asset name, regardless of extension
-        private static string FindSpritePath(string assetName)
+        private string FindSpritePath(string assetName)
         {
             string[] extensions = { ".png", ".jpg", ".jpeg", ".tga", ".psd", ".tiff" };
 
             foreach (string ext in extensions)
             {
-                string candidate = Path.Combine(PHOTOS_FOLDER, assetName + ext).Replace("\\", "/");
+                string candidate = Path.Combine(photosFolder, assetName + ext).Replace("\\", "/");
                 if (File.Exists(candidate))
                     return candidate;
             }
 
             return null;
+        }
+
+        // Converts an absolute path to a relative Unity path (Assets/...)
+        private static string ConvertToRelativePath(string absolutePath)
+        {
+            string projectPath = Application.dataPath.Replace("/Assets", "");
+            if (absolutePath.StartsWith(projectPath))
+                return absolutePath.Substring(projectPath.Length + 1).Replace("\\", "/");
+            return absolutePath;
         }
     }
 }
