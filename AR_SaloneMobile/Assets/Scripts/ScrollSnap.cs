@@ -11,8 +11,6 @@ public abstract class ScrollSnap : MonoBehaviour
 
     [SerializeField] HorizontalLayoutGroup HLG;
 
-    public TMP_Text nameLabelField;
-    public SO_Data refTo_SO_Data;
     public SO_Events refTo_SO_events;
 
     float rectWidth;

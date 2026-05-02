@@ -64,6 +64,7 @@ public class MyARManager : MonoBehaviour
     public void RemoveObjectFromScene()
     {       
         currentObjectInstantiated= null;
+        refTo_SO_Events.evt_UIChange.Invoke();
 
         foreach (var plane in planeManager.trackables)
         {

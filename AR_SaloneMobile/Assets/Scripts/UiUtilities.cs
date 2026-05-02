@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] Button buttonEsploso3D;
 
+    [SerializeField] CanvasGroup presetsCanvasGroup;
+
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
@@ -19,8 +22,6 @@ public class UiUtilities : MonoBehaviour
         refTo_SO_Events.evt_UIChange.RemoveAllListeners();
     }
 
-    [SerializeField] Animator canvasAnimator;
-
     public void Button_SetCurrentIndex(int _index)
     {
         refTo_SO_Data.SetIndex(_index);
@@ -28,15 +29,15 @@ public class UiUtilities : MonoBehaviour
 
     public void ChangeUI()
     {
-        canvasAnimator.SetTrigger("ToggleUI");
+        presetsCanvasGroup.DOFade(presetsCanvasGroup.alpha == 1.0f ? 0 : 1, 0.5f);
         if (m_Manager.currentObjectInstantiated == null)
         {
             buttonEsploso3D.interactable = false;
             return;
         }
 
-        if(m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
-        else buttonEsploso3D.interactable=false;
+        if (m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
+        else buttonEsploso3D.interactable = false;
     }
 
     public void Button_RemoveObject()
