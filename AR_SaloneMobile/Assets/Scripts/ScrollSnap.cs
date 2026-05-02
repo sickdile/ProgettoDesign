@@ -1,8 +1,9 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScrollSnap : MonoBehaviour
+public abstract class ScrollSnap : MonoBehaviour
 {
     [SerializeField] ScrollRect scrollRect;
     [SerializeField] RectTransform contentPanel;
@@ -10,9 +11,9 @@ public class ScrollSnap : MonoBehaviour
 
     [SerializeField] HorizontalLayoutGroup HLG;
 
-    [SerializeField] TMP_Text nameLabelField;
-    [SerializeField] SO_Data refTo_SO_Data;
-    [SerializeField] SO_Events refTo_SO_events;
+    public TMP_Text nameLabelField;
+    public SO_Data refTo_SO_Data;
+    public SO_Events refTo_SO_events;
 
     float rectWidth;
     float hlgSpacing;
@@ -21,22 +22,22 @@ public class ScrollSnap : MonoBehaviour
     [SerializeField] float snapSpeed = 0.0f;
     [SerializeField] float snapForce = 1f;
 
-    int currentItem = 0;
+    [NonSerialized] public int currentItem = 0;
     private void Start()
     {
         rectWidth = sampleListItem.rect.width;
         hlgSpacing = HLG.spacing;
-        nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
+        UpdateData();
 
     }
 
     private void Update()
     {
-         currentItem = Mathf.RoundToInt(
+        currentItem = Mathf.RoundToInt(
 
-            (Mathf.Abs(contentPanel.position.x)) /
-            (rectWidth + hlgSpacing)
-            );
+           (Mathf.Abs(contentPanel.position.x)) /
+           (rectWidth + hlgSpacing)
+           );
 
         if (scrollRect.velocity.magnitude < 100 &&
             !hasSnapped)
@@ -57,8 +58,7 @@ public class ScrollSnap : MonoBehaviour
                 snapSpeed = 0;
 
                 hasSnapped = true;
-                refTo_SO_events.evt_newObjectSelected.Invoke(currentItem);
-                nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
+                UpdateData();
             }
         }
 
@@ -68,4 +68,6 @@ public class ScrollSnap : MonoBehaviour
             snapSpeed = 0;
         }
     }
+
+    public abstract void UpdateData();
 }

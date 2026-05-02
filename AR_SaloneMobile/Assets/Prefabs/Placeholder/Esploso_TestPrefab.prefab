@@ -448,6 +448,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabBehaviour
   refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
+  presets:
+  - {fileID: 2100000, guid: 9c6e00f923756af46bdc33f4a18cac9a, type: 2}
+  - {fileID: 2100000, guid: 95cdba1a87d3e004d9357d25effb7f34, type: 2}
+  - {fileID: 2100000, guid: 314e85b06b3acb8418f6dc641ee72ba0, type: 2}
   canExplode: 1
   pieces:
   - {fileID: 5047482003841934435}

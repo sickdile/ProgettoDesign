@@ -5,6 +5,9 @@ public class PrefabBehaviour : MonoBehaviour
 {
     [SerializeField] private SO_Events refTo_SO_Events;
 
+    [Header("Materiali")]
+    [SerializeField] Material[] presets;
+
     [Header("Esploso 3D")]
     public bool CanExplode { get { return canExplode; } private set { canExplode = false; } }
     [Tooltip("Impostare True se il modello 3D ha un esploso.")]
@@ -18,7 +21,8 @@ public class PrefabBehaviour : MonoBehaviour
     private void OnEnable()
     {
         refTo_SO_Events.evt_removeObject.AddListener(SelfDestroy);
-       
+        refTo_SO_Events.evt_newPresetSelected.AddListener(ChangeMaterial);
+
         if (canExplode)
         {
             refTo_SO_Events.evt_esploso.AddListener(Do3DExplode);
@@ -50,8 +54,9 @@ public class PrefabBehaviour : MonoBehaviour
     {
         Vector3[] target = new Vector3[pieces.Length];
 
-        for (int i = 0; i < pieces.Length; i++) {
-            target[i] = hasExploded?(originalPositions[i]):(explodedTargetTransforms[i].position);
+        for (int i = 0; i < pieces.Length; i++)
+        {
+            target[i] = hasExploded ? (originalPositions[i]) : (explodedTargetTransforms[i].position);
         }
 
         hasExploded = !hasExploded;
@@ -59,6 +64,14 @@ public class PrefabBehaviour : MonoBehaviour
         for (int i = 0; i < pieces.Length; i++)
         {
             pieces[i].transform.DOMove(target[i], 1.0f);
+        }
+    }
+
+    void ChangeMaterial(int _idMaterial)
+    {
+        foreach (MeshRenderer renderer in GetComponentsInChildren<Renderer>())
+        {
+            renderer.sharedMaterial = presets[_idMaterial];
         }
     }
 }
