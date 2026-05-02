@@ -116,8 +116,6 @@ namespace UI
             cv_Project_02.gameObject.SetActive(false);
             
             rt_Project.DOAnchorPos(originalProjectPos, project_timeToDisplace).SetEase(project_easeType);
-            
-            log?.SendLog("UI Setup", this);
         }
 
         private async Awaitable ResetUI(float _duration)

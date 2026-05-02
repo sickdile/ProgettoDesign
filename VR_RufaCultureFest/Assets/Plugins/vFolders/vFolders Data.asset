@@ -18,6 +18,10 @@ MonoBehaviour:
     - 709f11a7f3c4041caa4ef136ea32d874
     - 4dda6011d6540794eab11d062015c2cd
     - 4f19d591a83476344a4105fd4e2943dc
+    - fd0bec386a4eca3428b3c4f3d287b7f7
+    - 72bcf9b288d6d1b4baa73f33cf6ac5a1
+    - 4d10d377e9bc7a545b0d90feb2a15da3
+    - 6f0f5e792b102f54691dbf3198ec0d4d
     values:
     - iconNameOrGuid: 
       colorIndex: 2
@@ -27,12 +31,28 @@ MonoBehaviour:
       colorIndex: 7
       isIconRecursive: 0
       isColorRecursive: 0
-    - iconNameOrGuid: 
+    - iconNameOrGuid: cs Script Icon
       colorIndex: 4
       isIconRecursive: 0
       isColorRecursive: 0
     - iconNameOrGuid: ScriptableObject Icon
-      colorIndex: 0
+      colorIndex: 8
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: AssemblyDefinitionAsset Icon
+      colorIndex: 6
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 6
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 9
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 3
       isIconRecursive: 0
       isColorRecursive: 0
   bookmarks: []
