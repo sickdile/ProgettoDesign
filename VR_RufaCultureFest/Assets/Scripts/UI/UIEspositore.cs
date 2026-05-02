@@ -165,8 +165,8 @@ namespace UI
                 .SetEase(detailsEase)
                 .OnComplete(() => detailsTransform.gameObject.SetActive(false));
             
-            cts_CameraDistance.Cancel();
-            cts_CameraDistance.Dispose();
+            cts_CameraDistance?.Cancel();
+            cts_CameraDistance?.Dispose();
             cts_CameraDistance = null;
         }
         

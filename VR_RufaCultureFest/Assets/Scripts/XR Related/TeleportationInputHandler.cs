@@ -12,6 +12,7 @@ namespace XR_Related
         [SerializeField] XRRayInteractor teleportInteractor;
         [SerializeField] InputActionProperty teleportActivatorAction;
         [SerializeField] InputActionProperty teleportCanceledAction;
+        [SerializeField] InputActionProperty teleportDisposeAction;
         
         [Header("Ray Teleport Settings")]
         [SerializeField] float visibilityRayTime = 3f;
@@ -22,12 +23,14 @@ namespace XR_Related
         {
             teleportActivatorAction.action.performed += TeleportPerformed;
             teleportCanceledAction.action.canceled += TeleportCanceled;
+            teleportDisposeAction.action.performed += TeleportCanceled;
         }
 
         private void OnDisable()
         {
             teleportActivatorAction.action.performed -= TeleportPerformed;
             teleportCanceledAction.action.canceled -= TeleportCanceled;
+            teleportDisposeAction.action.performed -= TeleportCanceled;
             
             CancelCurrentTimer();
         }

@@ -17,7 +17,10 @@ namespace Managers
         [Header("Esposizioni")]
         [SerializeField] Exposition exposition_default;
         [SerializeField] Exposition esposizione_01;
-        
+
+
+        #region DictionaryRelated
+
         // ReSharper disable once InconsistentNaming
         readonly Dictionary<int, UIEspositore> _espositori =  new();
         
@@ -31,6 +34,8 @@ namespace Managers
             }
             _espositori.Add(_key, _uiEspositore);
         }
+
+        #endregion
 
         void Start()
         {
