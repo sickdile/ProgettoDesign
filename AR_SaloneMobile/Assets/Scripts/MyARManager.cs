@@ -55,7 +55,7 @@ public class MyARManager : MonoBehaviour
         }
         GameObject obj = refTo_SO_Data.objPrefabs[refTo_SO_Data.currentObjIndex];
         currentObjectInstantiated = Instantiate(obj, _pose.position, _pose.rotation);
-        refTo_SO_Events.evt_UIPressed.Invoke();
+        refTo_SO_Events.evt_UIChange.Invoke();
     }
 
     /// <summary>
