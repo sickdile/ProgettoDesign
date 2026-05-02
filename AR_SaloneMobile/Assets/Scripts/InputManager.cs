@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using DG.Tweening;
 using UnityEngine.InputSystem.Interactions;
 
 public class InputManager : MonoBehaviour
@@ -14,9 +16,14 @@ public class InputManager : MonoBehaviour
     [SerializeField] SO_Data refTo_SO_Data;
 
     [SerializeField] LayerMask whatIsObject;
+
+    [SerializeField] UiUtilities uiUtilities;
+    Image roundUI;
+
     private void Start()
     {
         raycastManager = GetComponentInParent<ARRaycastManager>();
+        roundUI = uiUtilities.roundUI;
     }
 
     public void OnTapInput(InputAction.CallbackContext ctx)
@@ -34,17 +41,37 @@ public class InputManager : MonoBehaviour
     }
     public void OnRemoveInput(InputAction.CallbackContext ctx)
     {
-        if (ctx.duration > 1 && ctx.performed)
-        {
-            //fin qui funziona
-            
-            Ray ray = Camera.main.ScreenPointToRay(ctx.ReadValue<Vector2>());
+        float holdTime = (ctx.interaction is HoldInteraction hold) ? hold.duration : 1f;
+        Vector2 screenPos = ctx.ReadValue<Vector2>();
+        if (screenPos == Vector2.zero && Pointer.current != null) screenPos = Pointer.current.position.ReadValue();
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, whatIsObject))
+        if (ctx.started)
+        {
+            if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
-                Debug.Log($"Intercettato {hit.collider.name}");
+                roundUI.gameObject.SetActive(true);
+                roundUI.DOKill();
+                roundUI.fillAmount = 0;
+                roundUI.DOFillAmount(1, holdTime).SetEase(Ease.Linear);
+            }
+        }
+
+        if (ctx.performed)
+        {
+            if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
+            {
                 refTo_SO_Events.evt_removeObject.Invoke();
             }
+
+            roundUI.DOKill();
+            roundUI.DOFillAmount(0, 0.1f).OnComplete(() => roundUI.gameObject.SetActive(false));
+        }
+
+        if (ctx.canceled)
+        {
+            roundUI.DOKill();
+            roundUI.DOFillAmount(0, 0.2f).OnComplete(() => roundUI.gameObject.SetActive(false));
         }
     }
 }

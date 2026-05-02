@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,13 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] CanvasGroup presetsCanvasGroup;
 
+    public Image roundUI;
+
+    [SerializeField] TextMeshProUGUI hintText;
+    [SerializeField] float hintScreenDuration = 1;
+
+    [SerializeField] string hint_perComparire;
+    [SerializeField] string hint_perScomparire;
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
@@ -20,6 +28,29 @@ public class UiUtilities : MonoBehaviour
     private void OnDisable()
     {
         refTo_SO_Events.evt_UIChange.RemoveAllListeners();
+    }
+
+    private void Start()
+    {
+        HintAppears(hint_perComparire);
+    }
+
+    public void HintDisappears()
+    {
+        hintText.DOFade(0, 1);
+    }
+
+    public void HintAppears(string _text)
+    {
+        hintText.SetText(_text);
+        hintText.DOFade(1, 0.5f);
+        Invoke(nameof(HintDisappears), hintScreenDuration);
+    }
+    public void HintAppears()
+    {
+        hintText.SetText(hint_perComparire);
+        hintText.DOFade(1, 0.5f);
+        Invoke(nameof(HintDisappears), hintScreenDuration);
     }
 
     public void Button_SetCurrentIndex(int _index)
@@ -33,9 +64,11 @@ public class UiUtilities : MonoBehaviour
         if (m_Manager.currentObjectInstantiated == null)
         {
             buttonEsploso3D.interactable = false;
+            HintAppears();
             return;
         }
 
+        HintAppears(hint_perScomparire);
         if (m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
         else buttonEsploso3D.interactable = false;
     }

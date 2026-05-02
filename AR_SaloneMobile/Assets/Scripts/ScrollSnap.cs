@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public abstract class ScrollSnap : MonoBehaviour
 {
-    [SerializeField] ScrollRect scrollRect;
-    [SerializeField] RectTransform contentPanel;
+    public ScrollRect scrollRect;
+    public RectTransform contentPanel;
     [SerializeField] RectTransform sampleListItem;
 
     [SerializeField] HorizontalLayoutGroup HLG;
@@ -26,7 +26,6 @@ public abstract class ScrollSnap : MonoBehaviour
         rectWidth = sampleListItem.rect.width;
         hlgSpacing = HLG.spacing;
         UpdateData();
-
     }
 
     private void Update()
