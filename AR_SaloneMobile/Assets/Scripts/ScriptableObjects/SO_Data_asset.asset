@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPrefabs:
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
-  - {fileID: 8986042059909320816, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-  - {fileID: 3238793350205065332, guid: 7a0ef5fcf7030ca41b11400de97dadf5, type: 3}
-  - {fileID: 5112343138675956339, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-  - {fileID: 6163932519184016700, guid: 89c6e84d0273f56429ae87e7b3fa9dc4, type: 3}
-  - {fileID: 1469539845788280300, guid: b028410ccc9686b4480607ab2df15325, type: 3}
-  - {fileID: 5928501600415323081, guid: 04a9e55b3b2eb094ea02d98eada4dd31, type: 3}
-  - {fileID: 6349001428442858514, guid: 4a2cc2983d5bd2e4c9871b37dcb01ef3, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   objNames:
   - DUROCCO - Alara Celayir
   - Me&Us ??? - Chiara ???
