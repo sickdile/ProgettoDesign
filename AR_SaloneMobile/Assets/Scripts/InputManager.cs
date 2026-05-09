@@ -40,14 +40,21 @@ public class InputManager : MonoBehaviour
             }
         }
     }
+
     public void OnRemoveInput(InputAction.CallbackContext ctx)
     {
-        float holdTime = (ctx.interaction is HoldInteraction hold) ? hold.duration : 1f;
         Vector2 screenPos = ctx.ReadValue<Vector2>();
         if (screenPos == Vector2.zero && Pointer.current != null) screenPos = Pointer.current.position.ReadValue();
+
+        if (IsPointerOverUIManual(screenPos))
+        {
+            return;
+        }
+
+        float holdTime = (ctx.interaction is HoldInteraction hold) ? hold.duration : 1f;
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-        if (ctx.started && !EventSystem.current.IsPointerOverGameObject())
+        if (ctx.started)
         {
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
@@ -58,7 +65,7 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        if (ctx.performed && !EventSystem.current.IsPointerOverGameObject())
+        if (ctx.performed)
         {
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
@@ -69,12 +76,23 @@ public class InputManager : MonoBehaviour
             roundUI.DOFillAmount(0, 0.1f).OnComplete(() => roundUI.gameObject.SetActive(false));
         }
 
-        if (ctx.canceled && !EventSystem.current.IsPointerOverGameObject())
+        if (ctx.canceled)
         {
             roundUI.DOKill();
             roundUI.DOFillAmount(0, 0.2f).OnComplete(() => roundUI.gameObject.SetActive(false));
         }
     }
 
-}
+    private bool IsPointerOverUIManual(Vector2 screenPosition)
+    {
+        if (EventSystem.current == null) return false;
 
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = screenPosition;
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        return results.Count > 0;
+    }
+}
