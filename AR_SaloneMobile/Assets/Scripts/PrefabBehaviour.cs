@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System.Linq;
 using UnityEngine;
 
 public class PrefabBehaviour : MonoBehaviour
@@ -17,6 +18,8 @@ public class PrefabBehaviour : MonoBehaviour
     [SerializeField] private GameObject[] pieces;
     private Vector3[] originalPositions;
     [SerializeField] private Transform[] explodedTargetTransforms;
+
+    [SerializeField] GameObject[] ignoreChangeMaterial;
 
     private void OnEnable()
     {
@@ -71,6 +74,7 @@ public class PrefabBehaviour : MonoBehaviour
     {
         foreach (MeshRenderer renderer in GetComponentsInChildren<Renderer>())
         {
+            if (ignoreChangeMaterial.Contains(renderer.gameObject)) return;
             renderer.sharedMaterial = presets[_idMaterial];
         }
     }

@@ -15,9 +15,30 @@ MonoBehaviour:
   folderDatas_byGuid:
     keys:
     - aff2ad77dbe1cd24a950c105e8b545fd
+    - 114da449db70dc04f885cdfd12bd1ff0
+    - 49ffe8433379d8147a9ec2ee2ee70f6c
+    - 7301379f58a19cb44bfaab5765b65c6b
+    - 13e3d21564747ae4296992b19d32fa1c
     values:
+    - iconNameOrGuid: cs Script Icon
+      colorIndex: 4
+      isIconRecursive: 0
+      isColorRecursive: 0
     - iconNameOrGuid: 
       colorIndex: 4
       isIconRecursive: 0
       isColorRecursive: 0
-  bookmarks: []
+    - iconNameOrGuid: Prefab Icon
+      colorIndex: 6
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: PrefabModel Icon
+      colorIndex: 7
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 1
+      isIconRecursive: 0
+      isColorRecursive: 0
+  bookmarks:
+  - guid: 07a710582c65c8645b78874a1d16f4f4

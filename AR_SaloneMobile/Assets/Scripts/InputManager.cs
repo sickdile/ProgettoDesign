@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.InputSystem.Interactions;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class InputManager : MonoBehaviour
         if (screenPos == Vector2.zero && Pointer.current != null) screenPos = Pointer.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(screenPos);
 
-        if (ctx.started)
+        if (ctx.started && !EventSystem.current.IsPointerOverGameObject())
         {
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
@@ -57,7 +58,7 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        if (ctx.performed)
+        if (ctx.performed && !EventSystem.current.IsPointerOverGameObject())
         {
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
@@ -68,11 +69,12 @@ public class InputManager : MonoBehaviour
             roundUI.DOFillAmount(0, 0.1f).OnComplete(() => roundUI.gameObject.SetActive(false));
         }
 
-        if (ctx.canceled)
+        if (ctx.canceled && !EventSystem.current.IsPointerOverGameObject())
         {
             roundUI.DOKill();
             roundUI.DOFillAmount(0, 0.2f).OnComplete(() => roundUI.gameObject.SetActive(false));
         }
     }
+
 }
 
