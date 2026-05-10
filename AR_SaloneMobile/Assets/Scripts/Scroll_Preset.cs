@@ -1,11 +1,17 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class Scroll_Preset : ScrollSnap
 {
+    [SerializeField] TMP_Text nameLabelField;
+    [SerializeField] SO_Data refTo_SO_Data;
+
     public override void UpdateData()
     {
         refTo_SO_events.evt_newPresetSelected.Invoke(currentItem);
+        nameLabelField.text = refTo_SO_Data.allNames[refTo_SO_Data.currentObjIndex][currentItem];
+
     }
 
     private void OnEnable()

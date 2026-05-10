@@ -34,6 +34,17 @@ public class SO_Data : ScriptableObject
     private void OnEnable()
     {
         currentObjIndex = 0;
+        
+        allNames = new string[objNames.Length][];
+        allNames[0] = config0_names;
+        allNames[1] = config1_names;
+        allNames[2] = config2_names;
+        allNames[3] = config3_names;
+        allNames[4] = config4_names;
+        allNames[5] = config5_names;
+        allNames[6] = config6_names;
+        allNames[7] = config7_names;
+
     }
 
     public void SetIndex(int _index)

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Scroll_Object : ScrollSnap
 {
     [SerializeField] TMP_Text nameLabelField;
+    [SerializeField] TMP_Text descLabelField;
+
     [SerializeField] SO_Data refTo_SO_Data;
     CanvasGroup myCanvasGroup;
     private void OnEnable()
@@ -17,6 +19,8 @@ public class Scroll_Object : ScrollSnap
     {
         refTo_SO_events.evt_newObjectSelected.Invoke(currentItem);
         nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
+        descLabelField.text = refTo_SO_Data.allNames[refTo_SO_Data.currentObjIndex][0];
+
     }
 
     public void DisableScroll(Pose _pose)

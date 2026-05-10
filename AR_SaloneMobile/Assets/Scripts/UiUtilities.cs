@@ -33,6 +33,7 @@ public class UiUtilities : MonoBehaviour
     private void Start()
     {
         HintAppears(hint_perComparire);
+        Debug.Log("Check su allNames: " + refTo_SO_Data.allNames[1][2]);
     }
 
     public void HintDisappears()
