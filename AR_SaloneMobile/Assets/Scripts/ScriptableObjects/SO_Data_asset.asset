@@ -22,11 +22,59 @@ MonoBehaviour:
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   objNames:
-  - DUROCCO - Alara Celayir
-  - Me&Us ??? - Chiara ???
+  - Durocco - Alara Celayir
+  - Point - Chiara Leonetti
   - 2in1 - Elisa Tiberi
   - Culi Stellari - Giulia Barbaliscia
   - Scoliosis - Giulia Barbaliscia
-  - ' Black Mountain - Letizia Domilici'
+  - Black Mountain - Letizia Domilici
   - Muzzle - Mika Black
-  - QUOKA - Yasmin Mammadli
+  - Quoka - Yasmin Mammadli
+  config0_names:
+  - NoName
+  - NoName
+  - NoName
+  config1_names:
+  - Raw
+  - Ghost
+  - Monolith
+  config2_names:
+  - NoName
+  - NoName
+  - NoName
+  config3_names:
+  - NoName
+  - NoName
+  - NoName
+  config4_names:
+  - NoName
+  - NoName
+  - NoName
+  config5_names:
+  - Leshy
+  - Cleopatra
+  - Robin Hood
+  config6_names:
+  - NoName
+  - NoName
+  - NoName
+  config7_names:
+  - NoName
+  - NoName
+  - NoName
+  descriptions:
+  - '*No Description*'
+  - "La caratteristica forma a \u201Cpunto interrogativo-?\u201D, da cui il nome
+    POINT, d\xE0 luogo ad una seduta destinata a pi\xF9 persone e ad un\u2019altra
+    singola; ci\xF2 consente di scegliere tra due soluzioni di interazione: passare
+    del tempo in solitudine o in compagnia.\n\r\nLa linea morbida del profilo porta
+    ad una catena , composta da anelli connessi tra di loro, che pone l\u2019accento
+    sulla forza contenitiva, concetto espresso dalle manette e vincolante per la
+    sfera mobile che ha il compito di portare la luce all'interno del design contribuendo
+    positivamente alla sensazione trasmessa."
+  - '*No Description*'
+  - '*No Description*'
+  - '*No Description*'
+  - '*No Description*'
+  - '*No Description*'
+  - '*No Description*'

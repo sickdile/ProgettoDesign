@@ -17,7 +17,6 @@ public class Scroll_Object : ScrollSnap
     {
         refTo_SO_events.evt_newObjectSelected.Invoke(currentItem);
         nameLabelField.text = refTo_SO_Data.objNames[refTo_SO_Data.currentObjIndex];
-
     }
 
     public void DisableScroll(Pose _pose)
