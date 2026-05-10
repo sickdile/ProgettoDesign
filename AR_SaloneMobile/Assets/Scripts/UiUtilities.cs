@@ -85,15 +85,17 @@ public class UiUtilities : MonoBehaviour
             return;
         }
 
+      
+       buttonsCanvasGroup.interactable = true;
+        buttonsCanvasGroup.DOFade(1, 0.3f);
+
+        textsCanvasGroup.DOFade(1, 0.3f);
+        
+        
         HintAppears(hint_perScomparire);
         if (m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
         else buttonEsploso3D.interactable = false;
         buttonDescription.interactable = true;
-
-        buttonsCanvasGroup.interactable = false;
-        buttonsCanvasGroup.DOFade(1, 0.3f);
-
-        textsCanvasGroup.DOFade(1, 0.3f);
 
     }
 
