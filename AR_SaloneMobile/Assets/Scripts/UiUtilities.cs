@@ -11,12 +11,14 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] Button buttonEsploso3D;
     [SerializeField] Button buttonDescription;
+    [SerializeField] CanvasGroup buttonsCanvasGroup;
 
     [SerializeField] CanvasGroup presetsCanvasGroup;
 
     [SerializeField] CanvasGroup allSlidersCanvasGroup;
 
     [SerializeField] CanvasGroup descriptionCanvasGroup;
+    [SerializeField] CanvasGroup textsCanvasGroup;
 
     public Image roundUI;
 
@@ -25,6 +27,7 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] string hint_perComparire;
     [SerializeField] string hint_perScomparire;
+
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
@@ -73,6 +76,11 @@ public class UiUtilities : MonoBehaviour
         {
             buttonEsploso3D.interactable = false;
             buttonDescription.interactable = false;
+
+            buttonsCanvasGroup.interactable = false;
+            buttonsCanvasGroup.DOFade(0, 0.3f);
+
+            textsCanvasGroup.DOFade(0, .3f);
             HintAppears();
             return;
         }
@@ -81,6 +89,11 @@ public class UiUtilities : MonoBehaviour
         if (m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
         else buttonEsploso3D.interactable = false;
         buttonDescription.interactable = true;
+
+        buttonsCanvasGroup.interactable = false;
+        buttonsCanvasGroup.DOFade(1, 0.3f);
+
+        textsCanvasGroup.DOFade(1, 0.3f);
 
     }
 
