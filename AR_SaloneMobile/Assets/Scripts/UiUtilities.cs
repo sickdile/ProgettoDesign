@@ -10,8 +10,13 @@ public class UiUtilities : MonoBehaviour
     [SerializeField] SO_Events refTo_SO_Events;
 
     [SerializeField] Button buttonEsploso3D;
+    [SerializeField] Button buttonDescription;
 
     [SerializeField] CanvasGroup presetsCanvasGroup;
+
+    [SerializeField] CanvasGroup allSlidersCanvasGroup;
+
+    [SerializeField] CanvasGroup descriptionCanvasGroup;
 
     public Image roundUI;
 
@@ -65,6 +70,7 @@ public class UiUtilities : MonoBehaviour
         if (m_Manager.currentObjectInstantiated == null)
         {
             buttonEsploso3D.interactable = false;
+            buttonDescription.interactable = false;
             HintAppears();
             return;
         }
@@ -72,6 +78,8 @@ public class UiUtilities : MonoBehaviour
         HintAppears(hint_perScomparire);
         if (m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
         else buttonEsploso3D.interactable = false;
+        buttonDescription.interactable = true;
+
     }
 
     public void Button_RemoveObject()
@@ -84,4 +92,17 @@ public class UiUtilities : MonoBehaviour
     {
         refTo_SO_Events.evt_esploso.Invoke();
     }
+
+    bool isDescription = false;
+    public void Button_Description()
+    {
+        descriptionCanvasGroup.GetComponentInChildren<TextMeshProUGUI>().SetText(refTo_SO_Data.descriptions[refTo_SO_Data.currentObjIndex]);
+        descriptionCanvasGroup.GetComponentsInChildren<Image>()[1].sprite = refTo_SO_Data.projectPlans[refTo_SO_Data.currentObjIndex];
+        isDescription = !isDescription;
+        descriptionCanvasGroup.DOFade(isDescription ? 1 : 0, 0.3f);
+        descriptionCanvasGroup.blocksRaycasts = !descriptionCanvasGroup.blocksRaycasts;
+        allSlidersCanvasGroup.DOFade(isDescription ? .025f : 1, 0.3f);
+        refTo_SO_Events.evt_description.Invoke();
+    }
+
 }
