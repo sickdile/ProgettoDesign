@@ -298,8 +298,8 @@ MonoBehaviour:
   refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
   presets:
   - {fileID: 2100000, guid: 9a54d1178a4014644b9bb37e44233823, type: 2}
-  - {fileID: 2100000, guid: 95cdba1a87d3e004d9357d25effb7f34, type: 2}
-  - {fileID: 2100000, guid: 314e85b06b3acb8418f6dc641ee72ba0, type: 2}
+  - {fileID: 2100000, guid: 22539b9bb73cf1c4faf4024d7282d644, type: 2}
+  - {fileID: 2100000, guid: 705c7f23ef9b9f643aad8c7de969a9c2, type: 2}
   canExplode: 1
   pieces:
   - {fileID: 7235387466515626618}
@@ -311,7 +311,6 @@ MonoBehaviour:
   - {fileID: 8382179915951742277}
   ignoreChangeMaterial:
   - {fileID: 3370250354761160461}
-  - {fileID: 0}
 --- !u!65 &3305023056007505226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -396,8 +395,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1635638669348837863}
   - {fileID: 7450802064026667165}
+  - {fileID: 1635638669348837863}
   m_Father: {fileID: 1938686713827590820}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3370250354761160461
