@@ -26,6 +26,9 @@ public class SO_Data : ScriptableObject
     [Header("Descrizioni")]
     [TextArea] public string[] descriptions;
 
+    [Header("Project plans")]
+    public Texture[] projectPlans;
+
     public string[][] allNames;
 
     private void OnEnable()
