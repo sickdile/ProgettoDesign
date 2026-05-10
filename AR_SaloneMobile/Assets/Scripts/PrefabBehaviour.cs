@@ -24,7 +24,7 @@ public class PrefabBehaviour : MonoBehaviour
     private void OnEnable()
     {
         refTo_SO_Events.evt_removeObject.AddListener(SelfDestroy);
-        refTo_SO_Events.evt_newPresetSelected.AddListener(ChangeMaterial);
+        refTo_SO_Events.evt_newPresetSelected.AddListener(ChangeMyMaterial);
 
         if (canExplode)
         {
@@ -35,7 +35,9 @@ public class PrefabBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        refTo_SO_Events.evt_removeObject.RemoveAllListeners();
+        refTo_SO_Events.evt_removeObject.RemoveListener(SelfDestroy);
+        refTo_SO_Events.evt_newPresetSelected.RemoveListener(ChangeMyMaterial);
+        if(canExplode) refTo_SO_Events.evt_esploso.RemoveListener(Do3DExplode);
     }
 
 
@@ -50,6 +52,7 @@ public class PrefabBehaviour : MonoBehaviour
     }
     void SelfDestroy()
     {
+        hasExploded = false;
         Destroy(gameObject);
     }
 
@@ -70,7 +73,7 @@ public class PrefabBehaviour : MonoBehaviour
         }
     }
 
-    void ChangeMaterial(int _idMaterial)
+    void ChangeMyMaterial(int _idMaterial)
     {
         foreach (MeshRenderer renderer in GetComponentsInChildren<Renderer>())
         {

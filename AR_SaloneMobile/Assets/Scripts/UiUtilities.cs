@@ -64,9 +64,11 @@ public class UiUtilities : MonoBehaviour
         refTo_SO_Data.SetIndex(_index);
     }
 
+
     public void ChangeUI()
     {
-        presetsCanvasGroup.DOFade(presetsCanvasGroup.alpha == 1.0f ? 0 : 1, 0.5f);
+        presetsCanvasGroup.DOFade(m_Manager.currentObjectInstantiated == null ? 0 : 1, 0.5f);
+
         if (m_Manager.currentObjectInstantiated == null)
         {
             buttonEsploso3D.interactable = false;
@@ -82,11 +84,6 @@ public class UiUtilities : MonoBehaviour
 
     }
 
-    public void Button_RemoveObject()
-    {
-        refTo_SO_Events.evt_removeObject.Invoke();
-        ChangeUI();
-    }
 
     public void Button_3DExploded()
     {

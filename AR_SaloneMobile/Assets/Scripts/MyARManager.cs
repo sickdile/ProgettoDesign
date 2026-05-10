@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
 
 public class MyARManager : MonoBehaviour
@@ -63,7 +61,8 @@ public class MyARManager : MonoBehaviour
     /// </summary>
     public void RemoveObjectFromScene()
     {       
-        currentObjectInstantiated= null;
+        currentObjectInstantiated = null;
+        Debug.Log("Chiamata RemoveFromScene");
         refTo_SO_Events.evt_UIChange.Invoke();
 
         foreach (var plane in planeManager.trackables)

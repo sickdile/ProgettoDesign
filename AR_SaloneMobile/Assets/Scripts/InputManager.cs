@@ -70,6 +70,8 @@ public class InputManager : MonoBehaviour
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
                 refTo_SO_Events.evt_removeObject.Invoke();
+
+                Debug.Log("Inviato evento");
             }
 
             roundUI.DOKill();
