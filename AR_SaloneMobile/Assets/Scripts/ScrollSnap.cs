@@ -16,11 +16,12 @@ public abstract class ScrollSnap : MonoBehaviour
     float rectWidth;
     float hlgSpacing;
 
-    bool hasSnapped = true;
+    bool hasSnapped = false;
     [SerializeField] float snapSpeed = 0.0f;
     [SerializeField] float snapForce = 1f;
 
     [NonSerialized] public int currentItem = 0;
+
     private void Start()
     {
         rectWidth = sampleListItem.rect.width;
