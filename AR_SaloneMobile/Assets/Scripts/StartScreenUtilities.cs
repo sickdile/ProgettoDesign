@@ -7,7 +7,7 @@ public class StartScreenUtilities : MonoBehaviour
 
     public void CallHintAppears()
     {
-        uiUtil.HintAppears();
+        uiUtil.HintAppears_Comparire();
         GetComponent<Animator>().enabled = false;
         Destroy(gameObject);
     }

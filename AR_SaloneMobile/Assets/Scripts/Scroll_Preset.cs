@@ -23,10 +23,26 @@ public class Scroll_Preset : ScrollSnap
     {
         refTo_SO_events.evt_UIChange.RemoveAllListeners();
     }
+    public override int GetIndex()
+    {
+        return Mathf.RoundToInt(
+           (Mathf.Abs(contentPanel.position.x)) /
+           (rectWidth + hlgSpacing)
+           );
+    }
 
     void ResetPosition()
     {
         currentItem = 0;
         contentPanel.transform.DOMoveX(0, 1);
+    }
+    public override void ResetScrolling()
+    {
+        if (scrollRect.velocity.magnitude > 100)
+        {
+            hasSnapped = false;
+            snapSpeed = 0;
+
+        }
     }
 }

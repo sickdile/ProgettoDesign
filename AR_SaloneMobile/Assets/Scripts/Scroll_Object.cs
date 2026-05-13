@@ -10,6 +10,9 @@ public class Scroll_Object : ScrollSnap
 
     [SerializeField] SO_Data refTo_SO_Data;
     CanvasGroup myCanvasGroup;
+
+    bool isObjectInScene = false;
+
     private void OnEnable()
     {
         refTo_SO_events.evt_placeObject.AddListener(DisableScroll);
@@ -25,15 +28,38 @@ public class Scroll_Object : ScrollSnap
 
     }
 
+    public override int GetIndex()
+    {
+        if (isObjectInScene) return refTo_SO_Data.currentObjIndex;
+
+        return Mathf.RoundToInt(
+           (Mathf.Abs(contentPanel.position.x)) /
+           (rectWidth + hlgSpacing)
+           );
+    }
+
     public void DisableScroll(Pose _pose)
     {
-        scrollRect.enabled = false;
+        isObjectInScene = true;
+        //scrollRect.enabled = false;
         myCanvasGroup.DOFade(0.5f, 0.5f);
     }
 
     public void EnableScroll()
     {
-        scrollRect.enabled = true;
+        isObjectInScene = false;
+        //scrollRect.enabled = true;
         myCanvasGroup.DOFade(1, 0.5f);
+    }
+
+    public override void ResetScrolling()
+    {
+        if (scrollRect.velocity.magnitude > 100)
+        {
+            hasSnapped = false;
+            snapSpeed = 0;        
+            if (isObjectInScene) refTo_SO_events.evt_requestHint.Invoke();
+
+        }
     }
 }

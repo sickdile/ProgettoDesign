@@ -28,9 +28,12 @@ public class UiUtilities : MonoBehaviour
     [SerializeField] string hint_perComparire;
     [SerializeField] string hint_perScomparire;
 
+    [SerializeField] CanvasGroup nomeDellaCosaCG;
+
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
+        refTo_SO_Events.evt_requestHint.AddListener(HintAppears_Scomparire);
     }
 
     private void OnDisable()
@@ -48,6 +51,14 @@ public class UiUtilities : MonoBehaviour
     {
         hintText.DOFade(0, 1);
     }
+    public void HintAppears_Scomparire()
+    {
+        HintAppears(hint_perScomparire);
+        hintText.DOKill();
+        hintText.DOFade(1, 0.5f);
+        Invoke(nameof(HintDisappears), hintScreenDuration);
+
+    }
 
     public void HintAppears(string _text)
     {
@@ -55,7 +66,7 @@ public class UiUtilities : MonoBehaviour
         hintText.DOFade(1, 0.5f);
         Invoke(nameof(HintDisappears), hintScreenDuration);
     }
-    public void HintAppears()
+    public void HintAppears_Comparire()
     {
         hintText.SetText(hint_perComparire);
         hintText.DOFade(1, 0.5f);
@@ -81,17 +92,21 @@ public class UiUtilities : MonoBehaviour
             buttonsCanvasGroup.DOFade(0, 0.3f);
 
             textsCanvasGroup.DOFade(0, .3f);
-            HintAppears();
+            HintAppears_Comparire();
+
+            nomeDellaCosaCG.DOFade(1, .3f);
+
             return;
         }
 
-      
-       buttonsCanvasGroup.interactable = true;
+        nomeDellaCosaCG.DOFade(0, .3f);
+
+        buttonsCanvasGroup.interactable = true;
         buttonsCanvasGroup.DOFade(1, 0.3f);
 
         textsCanvasGroup.DOFade(1, 0.3f);
-        
-        
+
+
         HintAppears(hint_perScomparire);
         if (m_Manager.currentObjectInstantiated.GetComponent<PrefabBehaviour>().CanExplode) buttonEsploso3D.interactable = true;
         else buttonEsploso3D.interactable = false;

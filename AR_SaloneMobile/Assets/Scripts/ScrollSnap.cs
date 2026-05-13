@@ -13,11 +13,11 @@ public abstract class ScrollSnap : MonoBehaviour
 
     public SO_Events refTo_SO_events;
 
-    float rectWidth;
-    float hlgSpacing;
+    [NonSerialized] public float rectWidth;
+    [NonSerialized] public float hlgSpacing;
 
-    bool hasSnapped = false;
-    [SerializeField] float snapSpeed = 0.0f;
+    [NonSerialized] public bool hasSnapped = false;
+    public float snapSpeed = 0.0f;
     [SerializeField] float snapForce = 1f;
 
     [NonSerialized] public int currentItem = 0;
@@ -31,11 +31,7 @@ public abstract class ScrollSnap : MonoBehaviour
 
     private void Update()
     {
-        currentItem = Mathf.RoundToInt(
-
-           (Mathf.Abs(contentPanel.position.x)) /
-           (rectWidth + hlgSpacing)
-           );
+        currentItem = GetIndex();
 
         if (scrollRect.velocity.magnitude < 100 &&
             !hasSnapped)
@@ -60,12 +56,10 @@ public abstract class ScrollSnap : MonoBehaviour
             }
         }
 
-        if (scrollRect.velocity.magnitude > 100)
-        {
-            hasSnapped = false;
-            snapSpeed = 0;
-        }
+        ResetScrolling();
     }
 
     public abstract void UpdateData();
+    public abstract int GetIndex();
+    public abstract void ResetScrolling();
 }

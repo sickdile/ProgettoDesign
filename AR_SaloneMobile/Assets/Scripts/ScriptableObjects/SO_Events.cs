@@ -13,6 +13,7 @@ public class SO_Events : ScriptableObject
     [NonSerialized] public UnityEvent<int> evt_newObjectSelected;
     [NonSerialized] public UnityEvent<int> evt_newPresetSelected;
     [NonSerialized] public UnityEvent evt_UIChange;
+    [NonSerialized] public UnityEvent evt_requestHint;
 
     private void OnEnable()
     {
@@ -24,6 +25,7 @@ public class SO_Events : ScriptableObject
         if (evt_esploso == null) evt_esploso = new UnityEvent();
         if(evt_description == null) evt_description = new UnityEvent();
         if (evt_projectPlan == null) evt_projectPlan = new UnityEvent();
+        if (evt_requestHint == null) evt_requestHint = new UnityEvent();
 
     }
 }

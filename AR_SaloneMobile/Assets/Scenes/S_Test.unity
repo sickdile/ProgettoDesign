@@ -850,6 +850,7 @@ MonoBehaviour:
   hintScreenDuration: 3
   hint_perComparire: Tocca un piano per posizionare un oggetto.
   hint_perScomparire: Tieni premuto l'oggetto per rimuoverlo.
+  nomeDellaCosaCG: {fileID: 851280283}
 --- !u!4 &180322682
 Transform:
   m_ObjectHideFlags: 0
@@ -3356,6 +3357,7 @@ GameObject:
   - component: {fileID: 851280280}
   - component: {fileID: 851280282}
   - component: {fileID: 851280281}
+  - component: {fileID: 851280283}
   m_Layer: 5
   m_Name: TXT_nomeDellaCosa
   m_TagString: Untagged
@@ -3482,6 +3484,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851280279}
   m_CullTransparentMesh: 1
+--- !u!225 &851280283
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851280279}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &902709861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,11 +3668,11 @@ RectTransform:
   - {fileID: 352524388}
   m_Father: {fileID: 278526234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -936.5}
-  m_SizeDelta: {x: 0, y: 175}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!225 &911905649
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5552,7 +5566,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859414930
 MonoBehaviour:
