@@ -2029,6 +2029,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 4838499888513322214}
+    - target: {fileID: 1806730660234372640, guid: b4b29dba2d75c104ea79e479bbf448fb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 48c7c4b8afb25b143af65ddf691e54ae, type: 2}
     - target: {fileID: 3452093761411359951, guid: b4b29dba2d75c104ea79e479bbf448fb, type: 3}
       propertyPath: sortLog
       value: 

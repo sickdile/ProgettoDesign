@@ -151,6 +151,8 @@ namespace UI
         
         void ActivateDetails()
         {
+            log.SendLog("Attivato", this);
+
             detailsTransform.gameObject.SetActive(true);
             
             detailsTransform.DOScale(Vector3.one, timeToAppear_Details)
