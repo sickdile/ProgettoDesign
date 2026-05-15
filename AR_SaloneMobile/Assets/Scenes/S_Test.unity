@@ -3624,63 +3624,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 8e517da59e20e0a46a47a915c7988dd3, type: 2}
---- !u!1001 &968536530
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713444680733492663, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986042059909320816, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-      propertyPath: m_Name
-      value: 01_Leonetti
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
 --- !u!1 &1075604341
 GameObject:
   m_ObjectHideFlags: 0
@@ -5996,7 +5939,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -6229,4 +6172,3 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 278526234}
   - {fileID: 1482660152}
-  - {fileID: 968536530}

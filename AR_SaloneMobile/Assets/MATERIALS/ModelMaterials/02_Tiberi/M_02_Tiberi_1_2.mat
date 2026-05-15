@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_02_Tiberi_1_transp
+  m_Name: M_02_Tiberi_1_2
   m_Shader: {fileID: -6465566751694194690, guid: 6a20c4737949c614687ffc82d37626d3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: 460acd7a5c92aba4797b0b58f99a2b05, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8138977389b37114aa4fc2c807cf4ebf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -52,8 +52,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Emissive:
+        m_Texture: {fileID: 2800000, guid: 32cc2694b5632ff468293a0710b98803, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _M_R_AO:
-        m_Texture: {fileID: 2800000, guid: 2b368b386927c6648b10ed3db04df292, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6d4ab7b4de047e044997e44566d5ccfb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -65,7 +69,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 8c85487d1928a4e4cbd3bb0b98b21465, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6301316e70a0922469fa052c2956e932, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -128,6 +132,7 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - _hasTransparency: 0
+    - _isEmissive: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

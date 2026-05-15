@@ -15,7 +15,7 @@ MonoBehaviour:
   objPrefabs:
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   - {fileID: 8986042059909320816, guid: afc36a6e6badacf479b756e5be3b20e3, type: 3}
-  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 3238793350205065332, guid: 7a0ef5fcf7030ca41b11400de97dadf5, type: 3}
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   - {fileID: 1469539845788280300, guid: b028410ccc9686b4480607ab2df15325, type: 3}
@@ -73,8 +73,16 @@ MonoBehaviour:
     sfera mobile che ha il compito di portare la luce all'interno del design contribuendo
     positivamente alla sensazione trasmessa."
   - '*No Description*'
-  - '*No Description*'
-  - '*No Description*'
+  - "Nata da un sorteggio casuale di parole chiave, Culi Stellari \xE8 una panchina
+    provocatoria che fonde l'estetica di Star Wars con l'invito al gioco. Caratterizzata
+    da colori e supporti che richiamano la celebre saga, la seduta invita gli utenti
+    a interagire, scattarsi una foto e sfoggiare... un tanga. Un\u2019opera che trasforma
+    la 'vicinanza' in un momento di divertimento virale."
+  - "Il progetto nasce da un\u2019indagine visiva sulla silhouette di una modella
+    e sulla sua postura, caratterizzata da una schiena marcatamente curva. Da qui
+    nasce Scoliosis, una lampada-appendiabiti che, prendendo il nome da una condizione
+    clinica, trasforma la curvatura strutturale in un\u2019unione tra funzione ed
+    estetica."
   - '*No Description*'
   - '*No Description*'
   - '*No Description*'

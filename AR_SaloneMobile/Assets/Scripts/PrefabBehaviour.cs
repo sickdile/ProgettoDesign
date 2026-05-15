@@ -9,6 +9,11 @@ public class PrefabBehaviour : MonoBehaviour
     [Header("Materiali")]
     [SerializeField] Material[] presets;
 
+    [SerializeField] bool hasMultipleMaterials;
+
+    [Tooltip("Se hasMultipleMaterials è true, inserire qui i gruppi di materiali (il parent)")]
+    [SerializeField] GameObject[] groupParents;
+
     [Header("Esploso 3D")]
     public bool CanExplode { get { return canExplode; } private set { canExplode = false; } }
     [Tooltip("Impostare True se il modello 3D ha un esploso.")]
@@ -37,7 +42,7 @@ public class PrefabBehaviour : MonoBehaviour
     {
         refTo_SO_Events.evt_removeObject.RemoveListener(SelfDestroy);
         refTo_SO_Events.evt_newPresetSelected.RemoveListener(ChangeMyMaterial);
-        if(canExplode) refTo_SO_Events.evt_esploso.RemoveListener(Do3DExplode);
+        if (canExplode) refTo_SO_Events.evt_esploso.RemoveListener(Do3DExplode);
     }
 
 
@@ -75,10 +80,27 @@ public class PrefabBehaviour : MonoBehaviour
 
     void ChangeMyMaterial(int _idMaterial)
     {
-        foreach (MeshRenderer renderer in GetComponentsInChildren<Renderer>())
+        if (!hasMultipleMaterials)
         {
-            if (ignoreChangeMaterial.Contains(renderer.gameObject)) return;
-            renderer.sharedMaterial = presets[_idMaterial];
+            foreach (MeshRenderer renderer in GetComponentsInChildren<Renderer>())
+            {
+                if (ignoreChangeMaterial.Contains(renderer.gameObject)) return;
+                renderer.sharedMaterial = presets[_idMaterial];
+            }
         }
+        else
+        {
+            for (int i = 0; i < groupParents.Length; i++)
+            {
+                foreach(MeshRenderer renderer  in groupParents[i].GetComponentsInChildren<Renderer>())
+                {
+                    if (ignoreChangeMaterial.Contains(renderer.gameObject)) return;
+                    renderer.sharedMaterial = presets[_idMaterial + (3 * i)];
+                }
+            }
+        }
+
     }
+
+
 }
