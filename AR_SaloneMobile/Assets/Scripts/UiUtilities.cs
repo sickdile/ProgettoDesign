@@ -78,7 +78,6 @@ public class UiUtilities : MonoBehaviour
         refTo_SO_Data.SetIndex(_index);
     }
 
-
     public void ChangeUI()
     {
         presetsCanvasGroup.DOFade(m_Manager.currentObjectInstantiated == null ? 0 : 1, 0.5f);
@@ -130,6 +129,12 @@ public class UiUtilities : MonoBehaviour
         descriptionCanvasGroup.blocksRaycasts = !descriptionCanvasGroup.blocksRaycasts;
         allSlidersCanvasGroup.DOFade(isDescription ? .025f : 1, 0.3f);
         refTo_SO_Events.evt_description.Invoke();
+    }
+
+    public void SelectPreset(int _id)
+    {
+        refTo_SO_Events.evt_newPresetSelected.Invoke(_id);
+
     }
 
 }
