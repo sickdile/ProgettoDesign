@@ -4923,63 +4923,6 @@ MonoBehaviour:
   refTo_SO_Data: {fileID: 11400000, guid: 9a26466822d0757448c44db45b235cf5, type: 2}
   currentObjectInstantiated: {fileID: 0}
   planeManager: {fileID: 2512387470422636670}
---- !u!1001 &1586132995
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.78353
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.22155
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.261
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 641619859478710550, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112343138675956339, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
-      propertyPath: m_Name
-      value: 03_Barbaliscia_culiStellari
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
 --- !u!1 &1646841122
 GameObject:
   m_ObjectHideFlags: 0
@@ -6229,4 +6172,3 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 278526234}
   - {fileID: 1482660152}
-  - {fileID: 1586132995}

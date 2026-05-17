@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_03_Barbaliscia_1_1
-  m_Shader: {fileID: -6465566751694194690, guid: 4113c29f28badfe43b3ba489aa2f13b3, type: 3}
+  m_Name: M_holo
+  m_Shader: {fileID: -6465566751694194690, guid: 66c2456c3ba69f8459511f05fdcf89dd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _alpha_map:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,17 +42,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 0.28
-    - _FresnelSmoothness: 2.93
-    - _OpacityOffset: 0.337
+    - _F1: 0.51
+    - _F2: 2.58
+    - _F3: 0.83
+    - _Float: 0.09
+    - _Float_1: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.901
+    - _metallic: 1
+    - _smoothness: 0.861
     m_Colors:
-    - _ColorOfGlass: {r: 0.54209995, g: 0.680875, b: 0.78, a: 1}
+    - _Color_2: {r: 0.82315314, g: 0.6273585, b: 1, a: 1}
+    - _Color_3: {r: 1, g: 0.70336473, b: 0.5411765, a: 1}
+    - _Color_rim: {r: 0.23113209, g: 0.8648656, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &6370769239899359988
+--- !u!114 &4696848555938514105
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
