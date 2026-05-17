@@ -24,7 +24,7 @@ public class SO_Data : ScriptableObject
     public string[] config7_names;
 
     [Header("Descrizioni")]
-    [TextArea] public string[] descriptions;
+    [TextArea(5,20)] public string[] descriptions;
 
     [Header("Project plans")]
     public Sprite[] projectPlans;
