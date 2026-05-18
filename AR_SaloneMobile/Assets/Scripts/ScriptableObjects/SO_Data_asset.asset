@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   - {fileID: 1469539845788280300, guid: b028410ccc9686b4480607ab2df15325, type: 3}
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
-  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 6349001428442858514, guid: 4a2cc2983d5bd2e4c9871b37dcb01ef3, type: 3}
   objNames:
   - Durocco - Alara Celayir
   - Point - Chiara Leonetti
@@ -28,8 +28,8 @@ MonoBehaviour:
   - Culi Stellari - Giulia Barbaliscia
   - Scoliosis - Giulia Barbaliscia
   - Black Mountain - Letizia Domilici
-  - Muzzle - Mika Black
-  - Quoka - Yasmin Mammadli
+  - Muzzle - Mika Back
+  - Quoka - Yasmin Rafizadeh
   config0_names:
   - Upcycling
   - 'IYD: It''s Your Design'
