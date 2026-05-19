@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ScriptableObject.Exposition
+namespace BaseScriptable.Exposition
 {
     [CreateAssetMenu(fileName = "Exposition", menuName = "Exposition/Exposition")]
     public class Exposition : UnityEngine.ScriptableObject

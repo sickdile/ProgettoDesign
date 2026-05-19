@@ -8,26 +8,31 @@ namespace XR_Related
         [SerializeField] float sphereRadius = 0.3f;
         [SerializeField] float fadeEndDistance = 0.05f;
         [SerializeField] LayerMask layerMask;
-        [SerializeField] Renderer meshRenderer;
-        [SerializeField] string colorProperty = "_BaseColor";
         [SerializeField] int frameSkip = 3;
         [SerializeField] CanvasGroup canvasGroup;
 
         private readonly Collider[] colliderBuffer = new Collider[8];
         private int frameCounter;
-        private float cachedAlpha;
+        private float cachedAlpha = -1f;
 
         void Update()
         {
-            if (frameCounter++ % frameSkip == 0)
-                cachedAlpha = ComputeTargetAlpha();
+            if (frameCounter++ % frameSkip != 0)
+                return;
 
-            ApplyFade(cachedAlpha);
+            var _newAlpha = ComputeTargetAlpha();
+
+            if (Mathf.Approximately(_newAlpha, cachedAlpha))
+                return;
+
+            cachedAlpha = _newAlpha;
+            canvasGroup.alpha = cachedAlpha;
         }
 
         float ComputeTargetAlpha()
         {
-            var _count = Physics.OverlapSphereNonAlloc(cameraHead.position, sphereRadius, colliderBuffer, layerMask);
+            int _count = Physics.OverlapSphereNonAlloc(
+                cameraHead.position, sphereRadius, colliderBuffer, layerMask);
 
             if (_count == 0)
                 return 0f;
@@ -42,15 +47,6 @@ namespace XR_Related
             }
 
             return Mathf.InverseLerp(sphereRadius, fadeEndDistance, _closestDistance);
-        }
-
-        void ApplyFade(float _alpha)
-        {
-            var _color = meshRenderer.material.GetColor(colorProperty);
-            _color.a = _alpha;
-            canvasGroup.alpha = _alpha;
-            meshRenderer.material.SetColor(colorProperty, _color);
-            meshRenderer.enabled = _alpha > 0;
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using VInspector;
 
-namespace ScriptableObject.Exposition
+namespace BaseScriptable.Exposition
 {
     [CreateAssetMenu(fileName = "Photo", menuName = "Exposition/Photo")]
     public class Photo : UnityEngine.ScriptableObject

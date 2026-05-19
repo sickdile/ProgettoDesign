@@ -1,9 +1,9 @@
 using System.Collections.Generic;
+using BaseScriptable.Exposition;
 using Plugins.BetterDebugger;
-using ScriptableObject.Exposition;
 using UI;
 using UnityEngine;
-using EventHandler = ScriptableObject.Event.EventHandler;
+using EventHandler = BaseScriptable.Event.EventHandler;
 
 namespace Managers
 {

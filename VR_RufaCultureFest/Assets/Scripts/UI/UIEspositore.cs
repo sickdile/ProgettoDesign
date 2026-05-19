@@ -1,14 +1,14 @@
 using System;
 using System.Threading;
+using BaseScriptable.Exposition;
 using DG.Tweening;
 using Managers;
 using Plugins.BetterDebugger;
-using ScriptableObject.Exposition;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using VInspector;
-using EventHandler = ScriptableObject.Event.EventHandler;
+using EventHandler = BaseScriptable.Event.EventHandler;
 
 namespace UI
 {
@@ -151,7 +151,6 @@ namespace UI
         
         void ActivateDetails()
         {
-            log.SendLog("Attivato", this);
 
             detailsTransform.gameObject.SetActive(true);
             

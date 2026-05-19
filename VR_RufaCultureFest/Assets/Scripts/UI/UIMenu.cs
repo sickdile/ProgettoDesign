@@ -5,7 +5,7 @@ using Plugins.BetterDebugger;
 using UnityEngine;
 using UnityEngine.UI;
 using VInspector;
-using EventHandler = ScriptableObject.Event.EventHandler;
+using EventHandler = BaseScriptable.Event.EventHandler;
 
 namespace UI
 {
