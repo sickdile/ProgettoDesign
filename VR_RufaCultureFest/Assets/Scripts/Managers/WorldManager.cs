@@ -9,7 +9,6 @@ namespace Managers
     public class WorldManager : MonoBehaviour
     {
         [Header("Reference")]
-        [SerializeField]
         AutomaticSender log;
         [SerializeField]
         EventHandler eventHandler;
