@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8382179915951742277}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Target3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7450802064026667165}
   - component: {fileID: 5144676064123581603}
   - component: {fileID: 4780970271464194830}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: base_retopo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4507906830868210543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Target2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 1142634069115081167}
   - component: {fileID: 2077064642676442613}
   - component: {fileID: 2219444814735393645}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tappo_retopo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 6622817013387831656}
   - component: {fileID: 5621463440418720581}
   - component: {fileID: 647142363171607252}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: iNCENSO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 861405322511648230}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GRP_Exploded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 4084741508581925425}
   - component: {fileID: 806900600644660681}
   - component: {fileID: 6198953023026719289}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fumo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2504936141523976834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 3D_Pieces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1635638669348837863}
   - component: {fileID: 8020811038061719417}
   - component: {fileID: 1894230726999487398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 9215518840433500827}
   - component: {fileID: 3103504107966424387}
   - component: {fileID: 1010595822465426027}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cazzillo_piatto_sopra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 6504924029024068134}
   - component: {fileID: 3673789526344189687}
   - component: {fileID: 5497037496171560383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051091604248610632}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Target1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 862528114202020176}
   - component: {fileID: 9161404569877244771}
   - component: {fileID: 762614502217042116}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: scatolino_paletta_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1024,7 @@ GameObject:
   - component: {fileID: 7386183602923019233}
   - component: {fileID: 1519930429235341562}
   - component: {fileID: 7279947521452411296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: scatolino_new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   - component: {fileID: 8669603060726144268}
   - component: {fileID: 3909519528954513244}
   - component: {fileID: 2307204700831696100}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DISCO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1206,7 @@ GameObject:
   - component: {fileID: 5093045305921870573}
   - component: {fileID: 2969368253514201630}
   - component: {fileID: 160184805438459965}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 7832560838969829361}
   - component: {fileID: 6744554391799837865}
   - component: {fileID: 135320772001355777}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: coperchio_ripulito
   m_TagString: Untagged
   m_Icon: {fileID: 0}

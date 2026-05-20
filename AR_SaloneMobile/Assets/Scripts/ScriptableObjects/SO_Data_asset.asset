@@ -87,13 +87,21 @@ MonoBehaviour:
     estetica."
   - '*No Description*'
   - '*No Description*'
-  - '*No Description*'
+  - "Ispirata al movimento cristallizzato di un danzatore, questa scultura trasforma
+    la geometria statica in movimento vivo. Un asse centrale funge da colonna vertebrale,
+    mentre elementi triangolari ruotano come arti e tessuti sospesi; qui il vento
+    agisce come un coreografo invisibile, mutando costantemente le relazioni tra
+    forma, equilibrio e ombra.\n\nI pannelli blu suggeriscono apertura e slancio
+    verso l'alto, contrapponendosi all'energia radicata delle forme rosse inferiori.
+    L\u2019opera non ritrae un corpo fisico, ma astrae la tensione tra stabilit\xE0
+    e dinamismo, invitando a percepire la danza come un\u2019interazione continua
+    tra l'ambiente e le forze della natura."
   projectPlans:
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
-  - {fileID: 21300000, guid: 955d3c180242202449f7e0664f54fa1f, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}
+  - {fileID: 21300000, guid: 1d6cc616ead8cd84e965e496b04e9b18, type: 3}

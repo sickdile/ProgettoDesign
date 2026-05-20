@@ -32,6 +32,10 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI nameLabelField;
 
+    [SerializeField] RectTransform transform_Nome;
+    [SerializeField] RectTransform transform_variante;
+
+
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
@@ -128,6 +132,10 @@ public class UiUtilities : MonoBehaviour
         descriptionCanvasGroup.GetComponentsInChildren<Image>()[1].sprite = refTo_SO_Data.projectPlans[refTo_SO_Data.currentObjIndex];
         isDescription = !isDescription;
         descriptionCanvasGroup.DOFade(isDescription ? 1 : 0, 0.3f);
+        transform_Nome.DOScale(isDescription ? 1.3f : 1, 0.4f);
+        transform_variante.DOScale(isDescription ? 1.3f : 1, 0.4f);
+       // transform_variante.DOLocalMoveY(isDescription ? -170 : -190, 0.4f);
+
         descriptionCanvasGroup.blocksRaycasts = !descriptionCanvasGroup.blocksRaycasts;
         allSlidersCanvasGroup.DOFade(isDescription ? .025f : 1, 0.3f);
         refTo_SO_Events.evt_description.Invoke();
