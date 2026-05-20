@@ -30,6 +30,8 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] CanvasGroup nomeDellaCosaCG;
 
+    [SerializeField] TextMeshProUGUI nameLabelField;
+
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
@@ -134,6 +136,7 @@ public class UiUtilities : MonoBehaviour
     public void SelectPreset(int _id)
     {
         refTo_SO_Events.evt_newPresetSelected.Invoke(_id);
+        nameLabelField.text = refTo_SO_Data.allNames[refTo_SO_Data.currentObjIndex][_id];
 
     }
 

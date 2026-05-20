@@ -41,14 +41,12 @@ public class Scroll_Object : ScrollSnap
     public void DisableScroll(Pose _pose)
     {
         isObjectInScene = true;
-        //scrollRect.enabled = false;
         myCanvasGroup.DOFade(0.5f, 0.5f);
     }
 
     public void EnableScroll()
     {
         isObjectInScene = false;
-        //scrollRect.enabled = true;
         myCanvasGroup.DOFade(1, 0.5f);
     }
 
@@ -59,7 +57,6 @@ public class Scroll_Object : ScrollSnap
             hasSnapped = false;
             snapSpeed = 0;        
             if (isObjectInScene) refTo_SO_events.evt_requestHint.Invoke();
-
         }
     }
 }
