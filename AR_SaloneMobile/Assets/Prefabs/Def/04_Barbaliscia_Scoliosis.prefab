@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3921522254744633119}
   - component: {fileID: 8826526795332113212}
   - component: {fileID: 3052110923115608997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 9016150814967038711}
   - component: {fileID: 1508357599555285700}
   - component: {fileID: 4627302641578159095}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 6325208345997293176}
   - component: {fileID: 4239408081530225954}
   - component: {fileID: 4544418581137049587}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 1893016070569738401}
   - component: {fileID: 8819845920923522470}
   - component: {fileID: 208975460484471207}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 726289546267502231}
   - component: {fileID: 1736747777110775002}
   - component: {fileID: 7457053871795251866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 2857584641636015227}
   - component: {fileID: 1683225825996433524}
   - component: {fileID: 2159943991997324829}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 628748852385803302}
   - component: {fileID: 2653835988874090665}
   - component: {fileID: 3935663604916584731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 9052969903801534579}
   - component: {fileID: 5997462382238919330}
   - component: {fileID: 6247876679937152777}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 3041896625668269661}
   - component: {fileID: 6008707568780646802}
   - component: {fileID: 6418409917246855393}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 8660950152251329170}
   - component: {fileID: 9023730478572320544}
   - component: {fileID: 860147067603716614}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6578187047249435291}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LAMPADINA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 2384622013834458308}
   - component: {fileID: 2849757433957697216}
   - component: {fileID: 401554725447451719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 7485948018877909338}
   - component: {fileID: 3817645278389007068}
   - component: {fileID: 1458456954725755419}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1135,7 +1135,7 @@ GameObject:
   - component: {fileID: 6813780990635876100}
   - component: {fileID: 6131078361136349521}
   - component: {fileID: 4069778066294384802}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 18722241013354657}
   - component: {fileID: 8605090977575761135}
   - component: {fileID: 1592747980525538467}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,7 @@ GameObject:
   - component: {fileID: 9010114322973733352}
   - component: {fileID: 5001247323543501561}
   - component: {fileID: 5103307641279017729}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1405,7 +1405,7 @@ GameObject:
   - component: {fileID: 4328967133358236953}
   - component: {fileID: 8760188178885999518}
   - component: {fileID: 1766887441853337760}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 1991703157224609584}
   - component: {fileID: 7096847256018065882}
   - component: {fileID: 906775572476414241}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +1585,7 @@ GameObject:
   - component: {fileID: 5984977430385895864}
   - component: {fileID: 88532790276919154}
   - component: {fileID: 3426865128081025933}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_10.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1675,7 +1675,7 @@ GameObject:
   - component: {fileID: 152028850821931118}
   - component: {fileID: 7344436363796142014}
   - component: {fileID: 4112453607128482008}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 7502524680883757543}
   - component: {fileID: 7147505418292743502}
   - component: {fileID: 1554730394742450690}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1854,7 +1854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5688143796972758075}
   - component: {fileID: 4256837114085693827}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 04_Barbaliscia_Scoliosis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1891,6 +1891,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabBehaviour
   refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
+  presets: []
+  hasMultipleMaterials: 0
+  groupParents: []
+  canExplode: 0
+  pieces: []
+  explodedTargetTransforms: []
+  ignoreChangeMaterial: []
 --- !u!1 &6243894327796430252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1909,7 @@ GameObject:
   - component: {fileID: 640420593813819795}
   - component: {fileID: 8214055286026172613}
   - component: {fileID: 5812293227203160298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1992,7 +1999,7 @@ GameObject:
   - component: {fileID: 356467596504002122}
   - component: {fileID: 4198133016390022097}
   - component: {fileID: 5677584473389961170}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,7 +2089,7 @@ GameObject:
   - component: {fileID: 1637576014963665082}
   - component: {fileID: 741157292764690202}
   - component: {fileID: 6753593409893591129}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2172,7 +2179,7 @@ GameObject:
   - component: {fileID: 2723095585657561140}
   - component: {fileID: 2558613821502142405}
   - component: {fileID: 1891090921788739167}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2262,7 +2269,7 @@ GameObject:
   - component: {fileID: 7933539571712186206}
   - component: {fileID: 3803156688885658792}
   - component: {fileID: 7517860047480632722}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2352,7 +2359,7 @@ GameObject:
   - component: {fileID: 5723307174568547864}
   - component: {fileID: 7224786466927151723}
   - component: {fileID: 9140738980888366841}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2440,7 +2447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6186571282068618673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BASE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2490,7 +2497,7 @@ GameObject:
   - component: {fileID: 2653425166545496155}
   - component: {fileID: 5744813591520605148}
   - component: {fileID: 2119526109257213506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: wires_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2580,7 +2587,7 @@ GameObject:
   - component: {fileID: 7053691348116525167}
   - component: {fileID: 4554268179952879902}
   - component: {fileID: 5268144720525733074}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2670,7 +2677,7 @@ GameObject:
   - component: {fileID: 1876406914770307753}
   - component: {fileID: 3277693742827744590}
   - component: {fileID: 2285421699814268528}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2760,7 +2767,7 @@ GameObject:
   - component: {fileID: 8984552464630122572}
   - component: {fileID: 747128249701928271}
   - component: {fileID: 5034213304896626507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: filo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

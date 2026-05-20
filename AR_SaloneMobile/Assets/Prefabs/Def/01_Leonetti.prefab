@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4141463137017544472}
   - component: {fileID: 7904264181488751480}
   - component: {fileID: 6234064812047650062}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: seduta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6351324346214480106}
   - component: {fileID: 2439049148402110068}
   - component: {fileID: 6115663636500730539}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sfera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9005511147124058953}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 01_Leonetti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 5430013192163378411}
   - component: {fileID: 2550623016318380027}
   - component: {fileID: 7208728918797991929}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tubo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

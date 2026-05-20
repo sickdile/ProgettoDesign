@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6735992439296216636}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1594311800226300710}
   - component: {fileID: 5313708004950252705}
   - component: {fileID: 7787709845108868224}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 243024160241859031}
   - component: {fileID: 8765857796279982562}
   - component: {fileID: 1933502790917488391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 6324656208440579178}
   - component: {fileID: 3812393968024559506}
   - component: {fileID: 1533357935132749996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7987660857145500359}
   - component: {fileID: 5967316555831882895}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 06_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,6 +353,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabBehaviour
   refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
+  presets: []
+  hasMultipleMaterials: 0
+  groupParents: []
+  canExplode: 0
+  pieces: []
+  explodedTargetTransforms: []
+  ignoreChangeMaterial: []
 --- !u!1 &6890258971294602812
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +371,7 @@ GameObject:
   - component: {fileID: 4603791972834102150}
   - component: {fileID: 8023738559759623956}
   - component: {fileID: 4752247490901176873}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_1.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +461,7 @@ GameObject:
   - component: {fileID: 1020720293268348102}
   - component: {fileID: 7297920180117859402}
   - component: {fileID: 251924337019995036}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +551,7 @@ GameObject:
   - component: {fileID: 5605165940264067908}
   - component: {fileID: 2156334380609429585}
   - component: {fileID: 4936525772858416926}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Oggetto_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

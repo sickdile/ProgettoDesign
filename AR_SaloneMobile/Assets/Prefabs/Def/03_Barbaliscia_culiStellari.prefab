@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3637104524793668391}
   - component: {fileID: 105303942604671715}
   - component: {fileID: 1949614092505265880}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object_32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4238220900495155567}
   - component: {fileID: 5638803746503871172}
   - component: {fileID: 2747786739779623001}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 4904280129417913007}
   - component: {fileID: 1569529644487083164}
   - component: {fileID: 7217262549829053308}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: mutande_M1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 6473177135609351894}
   - component: {fileID: 7057838581391031770}
   - component: {fileID: 5785568516218184698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sostegi_cyl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3607009253388873964}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 03_Barbaliscia_CS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 297567294006621168}
   - component: {fileID: 5658513900028120501}
   - component: {fileID: 311197639651240790}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: schienale_M0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 3922447791533020113}
   - component: {fileID: 3626270517671090953}
   - component: {fileID: 8174782885468378962}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   - component: {fileID: 730638286790929668}
   - component: {fileID: 8842496554295870832}
   - component: {fileID: 4489513718066777928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Object_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6736640295546055242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Zampe_M2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

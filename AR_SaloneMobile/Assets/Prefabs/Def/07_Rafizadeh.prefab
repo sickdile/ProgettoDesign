@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6543023872028598860}
   - component: {fileID: 8505999237628087562}
   - component: {fileID: 7858490860403901569}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CILINDRI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4258178901568957218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 07_Rafizadeh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 3444140224270819505}
   - component: {fileID: 3420882353215438742}
   - component: {fileID: 434274777292065522}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: coso_sotto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 1365264814595264474}
   - component: {fileID: 7727936728752405599}
   - component: {fileID: 1452776080945656823}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tutto_il_resto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 3986151204015490710}
   - component: {fileID: 8732345311606427046}
   - component: {fileID: 1028346401713049430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coso_sopra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
