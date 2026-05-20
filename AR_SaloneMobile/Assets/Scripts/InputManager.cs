@@ -67,6 +67,7 @@ public class InputManager : MonoBehaviour
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
                 cerchiettoStarted=true;
+
                 roundUI.gameObject.SetActive(true);
                 roundUI.DOKill();
                 roundUI.fillAmount = 0;
@@ -92,6 +93,8 @@ public class InputManager : MonoBehaviour
         {
             roundUI.DOKill();
             roundUI.DOFillAmount(0, 0.2f).OnComplete(() => roundUI.gameObject.SetActive(false));
+            cerchiettoStarted = false;
+
         }
     }
 
