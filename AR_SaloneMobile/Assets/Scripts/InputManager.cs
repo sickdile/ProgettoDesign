@@ -33,6 +33,13 @@ public class InputManager : MonoBehaviour
         if (ctx.started)
         {
             Vector2 screenPos = ctx.ReadValue<Vector2>();
+
+
+            if (IsPointerOverUIManual(screenPos))
+            {
+                return;
+            }
+
             if (raycastManager.Raycast(screenPos, hits, TrackableType.PlaneWithinPolygon))
             {
                 Pose hitPose = hits[0].pose;
@@ -41,6 +48,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    bool cerchiettoStarted = false;
     public void OnRemoveInput(InputAction.CallbackContext ctx)
     {
         Vector2 screenPos = ctx.ReadValue<Vector2>();
@@ -48,7 +56,7 @@ public class InputManager : MonoBehaviour
 
         if (IsPointerOverUIManual(screenPos))
         {
-            return;
+            if(!cerchiettoStarted) return;
         }
 
         float holdTime = (ctx.interaction is HoldInteraction hold) ? hold.duration : 1f;
@@ -58,6 +66,7 @@ public class InputManager : MonoBehaviour
         {
             if (Physics.Raycast(ray, out _, Mathf.Infinity, whatIsObject))
             {
+                cerchiettoStarted=true;
                 roundUI.gameObject.SetActive(true);
                 roundUI.DOKill();
                 roundUI.fillAmount = 0;
@@ -76,6 +85,7 @@ public class InputManager : MonoBehaviour
 
             roundUI.DOKill();
             roundUI.DOFillAmount(0, 0.1f).OnComplete(() => roundUI.gameObject.SetActive(false));
+            cerchiettoStarted = false;
         }
 
         if (ctx.canceled)
