@@ -35,11 +35,17 @@ public class UiUtilities : MonoBehaviour
     [SerializeField] RectTransform transform_Nome;
     [SerializeField] RectTransform transform_variante;
 
+    [SerializeField] Button btn_closeTutorial;
+    [SerializeField] CanvasGroup cg_Tutorial;
+
+    [SerializeField] CanvasGroup cg_Info;
+
 
     private void OnEnable()
     {
         refTo_SO_Events.evt_UIChange.AddListener(ChangeUI);
         refTo_SO_Events.evt_requestHint.AddListener(HintAppears_Scomparire);
+        refTo_SO_Events.evt_tutorialEnded.AddListener(HandleTutorialEnded);
     }
 
     private void OnDisable()
@@ -50,7 +56,6 @@ public class UiUtilities : MonoBehaviour
     private void Start()
     {
         HintAppears(hint_perComparire);
-        Debug.Log("Check su allNames: " + refTo_SO_Data.allNames[1][2]);
     }
 
     public void HintDisappears()
@@ -134,7 +139,6 @@ public class UiUtilities : MonoBehaviour
         descriptionCanvasGroup.DOFade(isDescription ? 1 : 0, 0.3f);
         transform_Nome.DOScale(isDescription ? 1.3f : 1, 0.4f);
         transform_variante.DOScale(isDescription ? 1.3f : 1, 0.4f);
-       // transform_variante.DOLocalMoveY(isDescription ? -170 : -190, 0.4f);
 
         descriptionCanvasGroup.blocksRaycasts = !descriptionCanvasGroup.blocksRaycasts;
         allSlidersCanvasGroup.DOFade(isDescription ? .025f : 1, 0.3f);
@@ -148,4 +152,25 @@ public class UiUtilities : MonoBehaviour
 
     }
 
+    public void HandleTutorialEnded()
+    {
+        btn_closeTutorial.interactable = true;
+        if (btn_closeTutorial.GetComponent<CanvasGroup>() != null) btn_closeTutorial.GetComponent<CanvasGroup>().DOFade(1, 0.75f);
+    }
+
+    bool isTutorial = true;
+    public void ToggleTutorialWindow()
+    {
+        isTutorial = !isTutorial;
+        cg_Tutorial.blocksRaycasts = !cg_Tutorial.blocksRaycasts;
+        cg_Tutorial.DOFade(isTutorial ? 1 : 0, 0.5f);
+    }
+
+    bool isInfo = false;
+    public void ToggleInfoWindow()
+    {
+        isInfo = !isInfo;
+        cg_Info.blocksRaycasts = !cg_Info.blocksRaycasts;
+        cg_Info.DOFade(isInfo ? 1 : 0, 0.5f);
+    }
 }

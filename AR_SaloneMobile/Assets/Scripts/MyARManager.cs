@@ -35,8 +35,6 @@ public class MyARManager : MonoBehaviour
     public void SetCurrentObject(int _id)
     {
         refTo_SO_Data.SetIndex(_id);
-        Debug.Log($"Ho cambiato indice in {_id}");
-
     }
 
     /// <summary>

@@ -42,7 +42,6 @@ public class Scroll_Preset : ScrollSnap
         {
             hasSnapped = false;
             snapSpeed = 0;
-
         }
     }
 }
