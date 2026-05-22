@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 5112343138675956339, guid: bba61a87c7181f044b80d8c79baeee4b, type: 3}
   - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
   - {fileID: 1469539845788280300, guid: b028410ccc9686b4480607ab2df15325, type: 3}
-  - {fileID: 5172296482240578635, guid: 50d158cc2cf925c4aa7dd8a9c85357f5, type: 3}
+  - {fileID: 5928501600415323081, guid: 04a9e55b3b2eb094ea02d98eada4dd31, type: 3}
   - {fileID: 6349001428442858514, guid: 4a2cc2983d5bd2e4c9871b37dcb01ef3, type: 3}
   objNames:
   - Durocco - Alara Celayir
@@ -39,29 +39,29 @@ MonoBehaviour:
   - Ghost
   - Monolith
   config2_names:
-  - NoName
-  - NoName
-  - NoName
+  - Light
+  - Heavy
+  - Finished
   config3_names:
-  - NoName
-  - NoName
-  - NoName
+  - Culi Stellari
+  - 'Culi Stellari: Lato Oscuro'
+  - Culi Cromati
   config4_names:
-  - NoName
-  - NoName
-  - NoName
+  - Fluttuante
+  - Connessioni con la Natura
+  - Candy Pop
   config5_names:
   - Leshy
   - Cleopatra
   - Robin Hood
   config6_names:
-  - NoName
-  - NoName
-  - NoName
+  - Versione 1
+  - Versione 2
+  - Versione 3
   config7_names:
-  - NoName
-  - NoName
-  - NoName
+  - Versione 1
+  - Versione 2
+  - Versione 3
   descriptions:
   - "Time to separate children from technology!\n\nDurocco d\xE0 nuova vita a materiali
     di scarto quali plexiglass e cartone e li trasforma in nuovi giocattoli per bambini
@@ -85,8 +85,17 @@ MonoBehaviour:
     nasce Scoliosis, una lampada-appendiabiti che, prendendo il nome da una condizione
     clinica, trasforma la curvatura strutturale in un\u2019unione tra funzione ed
     estetica."
-  - '*No Description*'
-  - '*No Description*'
+  - "2in1 nasce come una struttura ibrida che combina funzione e luce: una seduta
+    integrata in un corpo unico con una libreria triangolare e una lampada irregolare,
+    cos\xEC da rendere la lettura pi\xF9 agevole e piacevole."
+  - "MUZZLE esplora la tensione tra esposizione e contenimento, trasformando una
+    semplice fonte luminosa in una narrazione scultorea. Realizzato in plexiglass,
+    il pezzo cattura e racchiude la lampadina, esercitando un sottile controllo su
+    ci\xF2 che \xE8 intrinsecamente radioso e libero.\n\nIl design vive di contrasti:
+    curve organiche incontrano spigoli protettivi, mentre la superficie fluida abbraccia
+    la geometria della sorgente, fin quasi a morderla. In questa ambiguit\xE0 tra
+    protezione e restrizione, l'oggetto si muove in uno spazio sospeso tra aggressivit\xE0
+    e cura, acquisendo una qualit\xE0 profondamente umana."
   - "Ispirata al movimento cristallizzato di un danzatore, questa scultura trasforma
     la geometria statica in movimento vivo. Un asse centrale funge da colonna vertebrale,
     mentre elementi triangolari ruotano come arti e tessuti sospesi; qui il vento
