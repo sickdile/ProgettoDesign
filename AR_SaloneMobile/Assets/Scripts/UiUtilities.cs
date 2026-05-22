@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UiUtilities : MonoBehaviour
 {
-    [SerializeField] MyARManager m_Manager;
+    public MyARManager m_Manager;
     [SerializeField] SO_Data refTo_SO_Data;
     [SerializeField] SO_Events refTo_SO_Events;
 

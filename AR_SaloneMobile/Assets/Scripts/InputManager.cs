@@ -51,6 +51,7 @@ public class InputManager : MonoBehaviour
     bool cerchiettoStarted = false;
     public void OnRemoveInput(InputAction.CallbackContext ctx)
     {
+        if (uiUtilities.m_Manager.currentObjectInstantiated == null) return;
         Vector2 screenPos = ctx.ReadValue<Vector2>();
         if (screenPos == Vector2.zero && Pointer.current != null) screenPos = Pointer.current.position.ReadValue();
 
