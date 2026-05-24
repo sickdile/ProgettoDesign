@@ -15,6 +15,7 @@ public class SO_Events : ScriptableObject
     [NonSerialized] public UnityEvent evt_UIChange;
     [NonSerialized] public UnityEvent evt_requestHint;
     [NonSerialized] public UnityEvent evt_tutorialEnded;
+    [NonSerialized] public UnityEvent evt_tutorialRequested;
 
     private void OnEnable()
     {
@@ -28,6 +29,8 @@ public class SO_Events : ScriptableObject
         if (evt_projectPlan == null) evt_projectPlan = new UnityEvent();
         if (evt_requestHint == null) evt_requestHint = new UnityEvent();
         if(evt_tutorialEnded == null) evt_tutorialEnded = new UnityEvent();
+        if (evt_tutorialRequested == null) evt_tutorialRequested = new UnityEvent();
+
 
     }
 }

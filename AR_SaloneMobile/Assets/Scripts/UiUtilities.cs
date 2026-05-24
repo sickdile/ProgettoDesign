@@ -2,6 +2,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using VInspector.Libs;
 
 public class UiUtilities : MonoBehaviour
 {
@@ -162,6 +163,7 @@ public class UiUtilities : MonoBehaviour
     public void ToggleTutorialWindow()
     {
         isTutorial = !isTutorial;
+        refTo_SO_Events.evt_tutorialRequested.Invoke();
         cg_Tutorial.blocksRaycasts = !cg_Tutorial.blocksRaycasts;
         cg_Tutorial.DOFade(isTutorial ? 1 : 0, 0.5f);
     }
