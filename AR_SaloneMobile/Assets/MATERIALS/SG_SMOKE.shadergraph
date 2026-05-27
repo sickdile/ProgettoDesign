@@ -5,6 +5,9 @@
     "m_Properties": [
         {
             "m_Id": "b63d7773563b42b4b4f361b07bf97f23"
+        },
+        {
+            "m_Id": "663d319d39f84f5b8558c52aaa558af3"
         }
     ],
     "m_Keywords": [],
@@ -122,6 +125,9 @@
         },
         {
             "m_Id": "f2989d68ad6e47d6b7f10e6304eb8e5a"
+        },
+        {
+            "m_Id": "cf3f8429846d4e559aac4287e980a990"
         }
     ],
     "m_GroupDatas": [],
@@ -531,6 +537,20 @@
                     "m_Id": "3145ab81c49e46cfa6665f6e46805f2c"
                 },
                 "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "cf3f8429846d4e559aac4287e980a990"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "c9872832015144bebf6e6f380d4eeafa"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -1888,6 +1908,22 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "468d5f9868f14e9c9de4679a73e86111",
+    "m_Id": 0,
+    "m_DisplayName": "smoke speed",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": [],
+    "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "4785d5c31f1149b7b294640c9432fa04",
     "m_Id": 0,
@@ -2338,6 +2374,50 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "663d319d39f84f5b8558c52aaa558af3",
+    "m_Guid": {
+        "m_GuidSerialized": "10b50608-c145-4d2b-ab11-1c232102d623"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "smoke speed",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "smoke speed",
+    "m_DefaultReferenceName": "_smoke_speed",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 0.20000000298023225,
+    "m_FloatType": 0,
+    "m_LiteralFloatMode": false,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "68a39b9f29634448a895621ce76ae8c8",
@@ -2477,6 +2557,9 @@
     "m_ChildObjectList": [
         {
             "m_Id": "b63d7773563b42b4b4f361b07bf97f23"
+        },
+        {
+            "m_Id": "663d319d39f84f5b8558c52aaa558af3"
         }
     ]
 }
@@ -4402,6 +4485,42 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "cf3f8429846d4e559aac4287e980a990",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -3287.5234375,
+            "y": 148.17398071289063,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "468d5f9868f14e9c9de4679a73e86111"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "663d319d39f84f5b8558c52aaa558af3"
     }
 }
 

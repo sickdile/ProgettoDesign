@@ -58,6 +58,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TilingFactor: -0.09
+    - _smoke_speed: 0.3
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
