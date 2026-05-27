@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a550f471cea1b864783155a79c28bbe7, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 599c0bd7eda31bc4987475360cc02eab, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -697,7 +697,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -829,6 +829,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3712146793038666165, guid: b558c424314ea5247b023c6cc18ddd2d, type: 3}
+      propertyPath: m_ImportantGI
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712146793038666165, guid: b558c424314ea5247b023c6cc18ddd2d, type: 3}
       propertyPath: m_StaticShadowCaster
       value: 0
       objectReference: {fileID: 0}
@@ -850,7 +854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1126649740089917816, guid: b558c424314ea5247b023c6cc18ddd2d, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8271228271207101352, guid: b558c424314ea5247b023c6cc18ddd2d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1856,6 +1860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pre_Espositore
       objectReference: {fileID: 0}
+    - target: {fileID: 5328326126693376588, guid: b4b29dba2d75c104ea79e479bbf448fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8507332091795519128, guid: b4b29dba2d75c104ea79e479bbf448fb, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1990,6 +1998,14 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 2100000, guid: e4cef7b7ad64577489c1e1b3e11996fa, type: 2}
+    - target: {fileID: 8752664909693293942, guid: 7bf5b21de444d1848963ff59999fdac2, type: 3}
+      propertyPath: m_CameraYOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752664909693293942, guid: 7bf5b21de444d1848963ff59999fdac2, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2011,6 +2027,10 @@ PrefabInstance:
     - target: {fileID: 1577171092038199912, guid: 3892d90484078e242a406855c7cf5803, type: 3}
       propertyPath: m_Name
       value: Pre_Bacheca
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577171092038199912, guid: 3892d90484078e242a406855c7cf5803, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4447283905844543002, guid: 3892d90484078e242a406855c7cf5803, type: 3}
       propertyPath: m_LocalPosition.x
