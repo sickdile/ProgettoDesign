@@ -3,7 +3,92 @@ guid: 30fd69c86a158ad40945077fd10bbf55
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Floor
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Floor_001
+    second: {fileID: 2100000, guid: eefb6843a1e9584428e9fe02e1cf34e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Floor_002
+    second: {fileID: 2100000, guid: 18e48c9822705dd4493b688c01faa806, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Floor_003
+    second: {fileID: 2100000, guid: 738737aba90dc8c488cfab66019b95d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Grass
+    second: {fileID: 2100000, guid: 640b53d5f3ec48948b6baef3a03a7500, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Mostre
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P01_InternalWall
+    second: {fileID: 2100000, guid: 2d31089e31052a449b02b80e47e93fcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_AcciaioRinforzato
+    second: {fileID: 2100000, guid: 59605f22eb01b0441bd5472980d61523, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Plain_Iron
+    second: {fileID: 2100000, guid: 4950a993a5ef6414ab0b257214c174b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_RockWall
+    second: {fileID: 2100000, guid: 62a83d284a3a40f4788fa1b102bd82ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_RufaDoor
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tetto
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Tettoia
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_View
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wall
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Windows
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wood
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

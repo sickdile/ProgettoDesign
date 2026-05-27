@@ -3,7 +3,157 @@ guid: e17598cbeda58d94198b80f51d5982f9
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Black
+    second: {fileID: 2100000, guid: b2b2ac7ef7a2c4c408940b2e6cf0f1a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Light
+    second: {fileID: 2100000, guid: cb73ceff76f91c04fa629646892e1d82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Matita_Temperata
+    second: {fileID: 2100000, guid: a4863d1d3f9a2274e916263a0d81b8a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Mostre
+    second: {fileID: 2100000, guid: 9cedfa9a73f8bb74e974cdf2ec57b622, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P01_InternalWall
+    second: {fileID: 2100000, guid: 2d31089e31052a449b02b80e47e93fcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_AcciaioRinforzato
+    second: {fileID: 2100000, guid: 59605f22eb01b0441bd5472980d61523, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Bag
+    second: {fileID: 2100000, guid: dbefb3aee6cc8bc4893379c79c388f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_BookColor
+    second: {fileID: 2100000, guid: 5ca2d6b14d2ee2a47a78a27e0189fe01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Concrete
+    second: {fileID: 2100000, guid: 47796940ea64df9498d0c1beae37bad0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_GreyIron
+    second: {fileID: 2100000, guid: 4950a993a5ef6414ab0b257214c174b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Lace
+    second: {fileID: 2100000, guid: dbefb3aee6cc8bc4893379c79c388f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Light
+    second: {fileID: 2100000, guid: cb73ceff76f91c04fa629646892e1d82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Metal
+    second: {fileID: 2100000, guid: 4950a993a5ef6414ab0b257214c174b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Pages
+    second: {fileID: 2100000, guid: dbefb3aee6cc8bc4893379c79c388f7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_PaperTube
+    second: {fileID: 2100000, guid: dd4a47e01dc8bc34183b3188941cead7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_PlasticWhite
+    second: {fileID: 2100000, guid: b9d1920b2c1a6764d9f5b5cbceebe038, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_RedIron
+    second: {fileID: 2100000, guid: a6c78564625d5024ea5a4040a2583b9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Shirt
+    second: {fileID: 2100000, guid: 3b9aec84dd044354bb388cfffb984e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Tazza
+    second: {fileID: 2100000, guid: d5eb157c9bc07814aafab30f65e8e2e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_Tela
+    second: {fileID: 2100000, guid: 509877d852de47246b0e2fbbeba5e981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_WhiteWood
+    second: {fileID: 2100000, guid: b9d1920b2c1a6764d9f5b5cbceebe038, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_P1_WoodPlatform
+    second: {fileID: 2100000, guid: 83a18883af60ddb4fb31ed51f068ccd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Plain_Iron
+    second: {fileID: 2100000, guid: 4950a993a5ef6414ab0b257214c174b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Plastic
+    second: {fileID: 2100000, guid: b9d1920b2c1a6764d9f5b5cbceebe038, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pot
+    second: {fileID: 2100000, guid: e907bf540846f3a4681270dca9d6af05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_RockWall
+    second: {fileID: 2100000, guid: 62a83d284a3a40f4788fa1b102bd82ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wall
+    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Wood
+    second: {fileID: 2100000, guid: 206db6450eb2ab84faeedb22b970f829, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_yellow
+    second: {fileID: 2100000, guid: 38cf05875d7f33e45afcd7d900388e01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: b658094219d5ebe409660c949d555791, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
