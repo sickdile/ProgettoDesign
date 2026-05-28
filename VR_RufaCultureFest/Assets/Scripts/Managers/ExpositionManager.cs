@@ -18,6 +18,9 @@ namespace Managers
         [SerializeField] Exposition exposition_default;
         [SerializeField] Exposition esposizione_01;
 
+        [SerializeField] GameObject grp_exp_01;
+        [SerializeField] GameObject grp_exp_02;
+
 
         #region DictionaryRelated
 
@@ -35,11 +38,44 @@ namespace Managers
             _espositori.Add(_key, _uiEspositore);
         }
 
+        public void ResetDictionary()
+        {
+            _espositori.Clear();
+        }
+
         #endregion
 
-        void Start()
+        private void Start()
         {
             log = GetComponent<AutomaticSender>();
+        }
+
+        void OnEnable()
+        {
+            eventHandler.ev_ChangeProject.AddListener(ChangeExp);
+        }
+
+        public void OnDisable()
+        {
+            eventHandler.ev_ChangeProject.RemoveListener(ChangeExp);
+        }
+
+        void ChangeExp(int _expIndex)
+        {
+            ResetDictionary();
+            switch (_expIndex)
+            {
+                case 1:
+                    grp_exp_01.SetActive(true);
+                    grp_exp_02.SetActive(false);
+                    break;
+                case 2:
+                    grp_exp_01.SetActive(false);
+                    grp_exp_02.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
             _ = DispatchStartPhotos();
         }
 

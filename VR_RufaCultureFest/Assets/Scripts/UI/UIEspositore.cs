@@ -33,7 +33,6 @@ namespace UI
 
         [SerializeField] bool setAutomaticDetails = true;
         [SerializeField] TextMeshProUGUI photoName;
-        [SerializeField] TextMeshProUGUI photoDescription;
         [SerializeField] TextMeshProUGUI photoAuthor;
         [SerializeField] TextMeshProUGUI photoDimension;
 
@@ -63,10 +62,6 @@ namespace UI
         void Start()
         {
             log =  GetComponent<AutomaticSender>();
-            
-            SetCamera();
-            SetupDetails();
-            AddMeToManager();
         }
 
         void AddMeToManager()
@@ -80,6 +75,9 @@ namespace UI
 
         void OnEnable()
         {
+            SetCamera();
+            SetupDetails();
+            AddMeToManager();
             eventHandler.ev_UpdateExposition?.AddListener(UpdateExposition);
         }
 
@@ -115,14 +113,14 @@ namespace UI
             try
             {
                 photoName.SetText(myPhoto.PhotoName);
-                photoDescription.SetText(myPhoto.PhotoDescription);
+                //photoDescription.SetText(myPhoto.PhotoDescription);
                 photoAuthor.SetText(myPhoto.PhotoAuthor);
                 photoDimension.SetText(myPhoto.PhotoDimension);
             }
             catch
             {
                 photoName.SetText("NOME");
-                photoDescription.SetText("Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione ");
+                //photoDescription.SetText("Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione ");
                 photoAuthor.SetText("AUTORE");
                 photoDimension.SetText("DIM X DIM");
             }

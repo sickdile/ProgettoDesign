@@ -51,8 +51,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _GradientStrenght: 0.47
-    - _MinHeight: 0.212
+    - _GradientStrenght: 1.5
+    - _MinHeight: 0.095
     - _QueueControl: 0
     - _QueueOffset: 0
     - _XRMotionVectorsPass: 1

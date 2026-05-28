@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using System.Text.RegularExpressions; // Aggiunto per le Regex
 using BaseScriptable.Exposition;
 
 namespace ScriptableObject.Exposition.Editor
@@ -85,7 +86,7 @@ namespace ScriptableObject.Exposition.Editor
                 return;
             }
 
-            int linked  = 0;
+            int linked = 0;
             int missing = 0;
 
             foreach (string guid in assetGuids)
@@ -99,11 +100,16 @@ namespace ScriptableObject.Exposition.Editor
                     continue;
                 }
 
-                string spritePath = FindSpritePath(photo.name);
+                // --- MODIFICA CHIAVE ---
+                // Rimuove eventuali prefissi numerici e underscore all'inizio del nome (es: "01_", "12_")
+                // Il pattern ^\d+_ significa: "Inizia (^) con una o più cifre (\d+) seguite da un underscore (_)"
+                string baseName = Regex.Replace(photo.name, @"^\d+_", "");
+
+                string spritePath = FindSpritePath(baseName);
 
                 if (spritePath == null)
                 {
-                    Debug.LogWarning($"[PhotoAssetLinker] Sprite not found for: {photo.name}");
+                    Debug.LogWarning($"[PhotoAssetLinker] Sprite not found for: {photo.name} (cercato come: {baseName})");
                     missing++;
                     continue;
                 }
@@ -117,8 +123,8 @@ namespace ScriptableObject.Exposition.Editor
                     continue;
                 }
 
-                SerializedObject   serialized = new SerializedObject(photo);
-                SerializedProperty imageProp  = serialized.FindProperty("photoImage");
+                SerializedObject serialized = new SerializedObject(photo);
+                SerializedProperty imageProp = serialized.FindProperty("photoImage");
 
                 imageProp.objectReferenceValue = sprite;
                 serialized.ApplyModifiedProperties();

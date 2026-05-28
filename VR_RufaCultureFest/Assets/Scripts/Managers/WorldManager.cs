@@ -48,10 +48,12 @@ namespace Managers
                 case Project.Project_01:
                     project_01.SetActive(true);
                     project_02.SetActive(false);
+                    eventHandler.ev_ChangeProject.Invoke(1);
                     break;
                 case Project.Project_02:
                     project_02.SetActive(true);
                     project_01.SetActive(false);
+                    eventHandler.ev_ChangeProject.Invoke(2);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

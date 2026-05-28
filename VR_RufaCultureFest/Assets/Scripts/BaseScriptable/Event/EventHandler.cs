@@ -9,12 +9,14 @@ namespace BaseScriptable.Event
         public UnityEvent<int> ev_Project;
         public UnityEvent ev_loadProject;
         public UnityEvent ev_UpdateExposition;
+        public UnityEvent<int> ev_ChangeProject;
 
         private void OnEnable()
         {
             ev_Project ??= new UnityEvent<int>();
             ev_loadProject ??= new UnityEvent();
             ev_UpdateExposition ??= new UnityEvent();
+            ev_ChangeProject ??= new UnityEvent<int>();
         }
 
         private void OnDisable()
@@ -22,6 +24,7 @@ namespace BaseScriptable.Event
             ev_Project = null;
             ev_loadProject = null;
             ev_UpdateExposition = null;
+            ev_ChangeProject = null;
         }
     }
 }
