@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Floor
-    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+    second: {fileID: 2100000, guid: 5863b5a8050e9dd47b8ee1dd5d9899dd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -33,7 +33,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Mostre
-    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+    second: {fileID: 2100000, guid: 4818c92baf115ce4ca370bfea362999b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -63,7 +63,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Tetto
-    second: {fileID: 2100000, guid: bd0a928adc7ff874da8c2d98e1efab31, type: 2}
+    second: {fileID: 2100000, guid: 161d6c85ef394494b8071c42f6066820, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
