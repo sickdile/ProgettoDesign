@@ -59,10 +59,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _PowerEmissive: 2.06
+    - _PowerEmissive: 3.5
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Roughness: 0.072
+    - _Roughness: 0.106
     - _Transparency: 0
     m_Colors:
     - _ColoreVetro: {r: 0.31176573, g: 0.5029636, b: 0.5849056, a: 1}

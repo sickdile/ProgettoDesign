@@ -363,8 +363,8 @@ MonoBehaviour:
   pieces: []
   explodedTargetTransforms: []
   ignoreChangeMaterial:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6940913118308808192}
+  - {fileID: 3086947260840366060}
   - {fileID: 8800342743379199670}
 --- !u!65 &8684188410338743690
 BoxCollider:
@@ -469,6 +469,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb15f08577ea3a14faddead40475ef6c, type: 3}
+--- !u!1 &3086947260840366060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4151649624555057767, guid: bb15f08577ea3a14faddead40475ef6c, type: 3}
+  m_PrefabInstance: {fileID: 1390087794365152651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8821418689053659988 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7575455846490222303, guid: bb15f08577ea3a14faddead40475ef6c, type: 3}
