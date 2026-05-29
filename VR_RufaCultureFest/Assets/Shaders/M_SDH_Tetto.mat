@@ -42,8 +42,9 @@ Material:
     - _MinHeight: 0.2
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _XRMotionVectorsPass: 1
     m_Colors:
-    - _Color: {r: 0.6226415, g: 0.27467328, b: 0.09104663, a: 1}
+    - _Color: {r: 0.36900002, g: 0.19647855, b: 0.159777, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &5774014637397305098
