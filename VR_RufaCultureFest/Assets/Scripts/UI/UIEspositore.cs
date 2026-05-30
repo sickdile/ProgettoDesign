@@ -114,14 +114,14 @@ namespace UI
             {
                 photoName.SetText(myPhoto.PhotoName);
                 //photoDescription.SetText(myPhoto.PhotoDescription);
-                photoAuthor.SetText(myPhoto.PhotoAuthor);
+                photoAuthor.SetText(myPhoto.PhotoAuthor + ",");
                 photoDimension.SetText(myPhoto.PhotoDimension);
             }
             catch
             {
                 photoName.SetText("NOME");
                 //photoDescription.SetText("Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione ");
-                photoAuthor.SetText("AUTORE");
+                photoAuthor.SetText("AUTORE,");
                 photoDimension.SetText("DIM X DIM");
             }
         }
