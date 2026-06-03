@@ -22,6 +22,7 @@ public class PrefabBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject[] pieces;
     private Vector3[] originalPositions;
+    private Quaternion[] originalRotations;
     [SerializeField] private Transform[] explodedTargetTransforms;
 
     [SerializeField] GameObject[] ignoreChangeMaterial;
@@ -49,7 +50,6 @@ public class PrefabBehaviour : MonoBehaviour
     void StoreOriginalPiecePositions()
     {
         originalPositions = new Vector3[pieces.Length];
-
         for (int i = 0; i < pieces.Length; i++)
         {
             originalPositions[i] = pieces[i].transform.position;

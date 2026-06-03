@@ -47,12 +47,13 @@ public class MyARManager : MonoBehaviour
 
         foreach (var plane in planeManager.trackables)
         {
-            //plane.GetComponent<ARPlaneMeshVisualizer>().enabled = false;
+            plane.GetComponent<ARPlaneMeshVisualizer>().enabled = false;
         }
         GameObject obj = refTo_SO_Data.objPrefabs[refTo_SO_Data.currentObjIndex];
         currentObjectInstantiated = Instantiate(obj, _pose.position, _pose.rotation);
         refTo_SO_Events.evt_UIChange.Invoke();
     }
+
 
     /// <summary>
     /// Distrugge l'oggetto attualmente istanziato.
@@ -65,7 +66,7 @@ public class MyARManager : MonoBehaviour
 
         foreach (var plane in planeManager.trackables)
         {
-         // plane.GetComponent<ARPlaneMeshVisualizer>().enabled = true;
+         plane.GetComponent<ARPlaneMeshVisualizer>().enabled = true;
         }
     }
 
