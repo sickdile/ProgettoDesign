@@ -23,6 +23,7 @@ public class UiUtilities : MonoBehaviour
     public Image roundUI;
 
     [SerializeField] TextMeshProUGUI hintText;
+    [SerializeField] CanvasGroup hintTextGroup;
     [SerializeField] float hintScreenDuration = 1;
 
     [SerializeField] string hint_perComparire;
@@ -40,6 +41,7 @@ public class UiUtilities : MonoBehaviour
 
     [SerializeField] CanvasGroup cg_Info;
 
+    [SerializeField] CanvasGroup btn_closeDetails;
 
     private void OnEnable()
     {
@@ -60,13 +62,13 @@ public class UiUtilities : MonoBehaviour
 
     public void HintDisappears()
     {
-        hintText.DOFade(0, 1);
+        hintTextGroup.DOFade(0, 1);
     }
     public void HintAppears_Scomparire()
     {
         HintAppears(hint_perScomparire);
-        hintText.DOKill();
-        hintText.DOFade(1, 0.5f);
+        hintTextGroup.DOKill();
+        hintTextGroup.DOFade(1, 0.5f);
         Invoke(nameof(HintDisappears), hintScreenDuration);
 
     }
@@ -74,13 +76,13 @@ public class UiUtilities : MonoBehaviour
     public void HintAppears(string _text)
     {
         hintText.SetText(_text);
-        hintText.DOFade(1, 0.5f);
+        hintTextGroup.DOFade(1, 0.5f);
         Invoke(nameof(HintDisappears), hintScreenDuration);
     }
     public void HintAppears_Comparire()
     {
         hintText.SetText(hint_perComparire);
-        hintText.DOFade(1, 0.5f);
+        hintTextGroup.DOFade(1, 0.5f);
         Invoke(nameof(HintDisappears), hintScreenDuration);
     }
 
@@ -137,6 +139,8 @@ public class UiUtilities : MonoBehaviour
         descriptionCanvasGroup.GetComponentsInChildren<Image>()[1].sprite = refTo_SO_Data.projectPlans[refTo_SO_Data.currentObjIndex];
         isDescription = !isDescription;
         descriptionCanvasGroup.DOFade(isDescription ? 1 : 0, 0.3f);
+        btn_closeDetails.DOFade(isDescription ? 1 : 0, 0.3f);
+        btn_closeDetails.interactable = !btn_closeDetails.interactable;
         transform_Nome.DOScale(isDescription ? 1.3f : 1, 0.4f);
         transform_variante.DOScale(isDescription ? 1.3f : 1, 0.4f);
 
