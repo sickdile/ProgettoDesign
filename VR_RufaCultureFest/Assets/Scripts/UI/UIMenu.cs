@@ -112,6 +112,7 @@ namespace UI
         {
             project_Cg_HasMoved = false;
             cv_ProjectPage.alpha = 0f;
+            cv_ProjectPage.interactable = false;
             cv_Project_01.gameObject.SetActive(false);
             cv_Project_02.gameObject.SetActive(false);
             
@@ -216,6 +217,7 @@ namespace UI
             var _seq = DOTween.Sequence();
             _seq.Append(rt_Project.DOAnchorPos(_target, project_timeToDisplace).SetEase(project_easeType));
             _seq.Append(cv_ProjectPage.DOFade(1f, projectPage_timeToFade).SetEase(projectPage_EaseFade));
+            cv_ProjectPage.interactable = true;
         }
 
         void ProjectSelector(ProjectSelected _tmp)
