@@ -897,7 +897,7 @@ MonoBehaviour:
   btn_closeTutorial: {fileID: 410480534}
   cg_Tutorial: {fileID: 1135497476}
   cg_Info: {fileID: 1630574112}
-  btn_closeDetails: {fileID: 0}
+  btn_info: {fileID: 1261272181}
 --- !u!4 &180322682
 Transform:
   m_ObjectHideFlags: 0
@@ -4404,6 +4404,7 @@ GameObject:
   - component: {fileID: 1261272180}
   - component: {fileID: 1261272179}
   - component: {fileID: 1261272178}
+  - component: {fileID: 1261272181}
   m_Layer: 5
   m_Name: BTN_INFO
   m_TagString: Untagged
@@ -4524,6 +4525,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261272176}
   m_CullTransparentMesh: 1
+--- !u!225 &1261272181
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261272176}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1302059411
 PrefabInstance:
   m_ObjectHideFlags: 0

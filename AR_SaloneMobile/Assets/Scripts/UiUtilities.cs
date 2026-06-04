@@ -40,8 +40,7 @@ public class UiUtilities : MonoBehaviour
     [SerializeField] CanvasGroup cg_Tutorial;
 
     [SerializeField] CanvasGroup cg_Info;
-
-    [SerializeField] CanvasGroup btn_closeDetails;
+    [SerializeField] CanvasGroup btn_info;
 
     private void OnEnable()
     {
@@ -102,7 +101,7 @@ public class UiUtilities : MonoBehaviour
 
             buttonsCanvasGroup.interactable = false;
             buttonsCanvasGroup.DOFade(0, 0.3f);
-
+            btn_info.DOFade(1, 0.3f);
             textsCanvasGroup.DOFade(0, .3f);
             HintAppears_Comparire();
 
@@ -115,6 +114,7 @@ public class UiUtilities : MonoBehaviour
 
         buttonsCanvasGroup.interactable = true;
         buttonsCanvasGroup.DOFade(1, 0.3f);
+        btn_info.DOFade(0, 0.3f);
 
         textsCanvasGroup.DOFade(1, 0.3f);
 
@@ -139,8 +139,6 @@ public class UiUtilities : MonoBehaviour
         descriptionCanvasGroup.GetComponentsInChildren<Image>()[1].sprite = refTo_SO_Data.projectPlans[refTo_SO_Data.currentObjIndex];
         isDescription = !isDescription;
         descriptionCanvasGroup.DOFade(isDescription ? 1 : 0, 0.3f);
-        btn_closeDetails.DOFade(isDescription ? 1 : 0, 0.3f);
-        btn_closeDetails.interactable = !btn_closeDetails.interactable;
         transform_Nome.DOScale(isDescription ? 1.3f : 1, 0.4f);
         transform_variante.DOScale(isDescription ? 1.3f : 1, 0.4f);
 
