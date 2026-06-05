@@ -16,7 +16,7 @@ public class SO_Events : ScriptableObject
     [NonSerialized] public UnityEvent evt_requestHint;
     [NonSerialized] public UnityEvent evt_tutorialEnded;
     [NonSerialized] public UnityEvent evt_tutorialRequested;
-
+   
     private void OnEnable()
     {
         if (evt_removeObject == null) evt_removeObject = new UnityEvent();

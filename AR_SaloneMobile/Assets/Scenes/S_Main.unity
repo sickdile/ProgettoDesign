@@ -925,6 +925,7 @@ GameObject:
   - component: {fileID: 225732863}
   - component: {fileID: 225732862}
   - component: {fileID: 225732864}
+  - component: {fileID: 225732865}
   m_Layer: 5
   m_Name: BTN_Ogg_02
   m_TagString: Untagged
@@ -1008,12 +1009,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1045,6 +1046,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &225732865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225732860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc00d71cae8c67439807e0066152f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonUtilities
+  isDefaultActive: 0
+  myIndex: 2
+  refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
 --- !u!1 &234179386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1300,7 @@ GameObject:
   - component: {fileID: 272837708}
   - component: {fileID: 272837707}
   - component: {fileID: 272837709}
+  - component: {fileID: 272837710}
   m_Layer: 5
   m_Name: BTN_Ogg_01
   m_TagString: Untagged
@@ -1367,12 +1384,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1404,6 +1421,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &272837710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272837705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc00d71cae8c67439807e0066152f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonUtilities
+  isDefaultActive: 0
+  myIndex: 1
+  refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
 --- !u!1 &278526230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,7 +3342,7 @@ GameObject:
   - component: {fileID: 823527284}
   - component: {fileID: 823527283}
   m_Layer: 5
-  m_Name: TXT_Credits_Title
+  m_Name: TXT_Guida_Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5029,18 +5061,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n<b><u>Coordinamento e supervisione Progetti Multimediali:</u></b>\n\r\n<b>Raffaele
-    Vella</b> (Coordinatore del corso di Multimedia and Game Art)\r\n<b>Giulio Pernice</b>
-    (Docente di Sistemi Interattivi)\r\n\r\n\n\n<b><u>Sviluppo Progetti Multimediali:</u></b>\n\n<b>Diletta
-    Maria Nannini</b> (studentessa del corso di Multimedia and Game Art)\n<b>Samuele
-    Palmalupi</b> (studente del corso di Multimedia and Game Art)\r\n\n\n\n<b><u>Coordinamento
-    e supervisione Progetti Design:</u></b>\n\n<b>Alessandro Ciancio </b>(Coordinatore
-    del corso di Design - docente di exhibit design)\r\n<b>Paolo Parea </b>(docente
-    di product design)\r\n\n\n\n<b><u>Progetti Design:</u></b>\n\n<b>Alara Celayir</b>
-    - <i>\"Durocco\"</i> (gioco per bambini realizzato con materiali di riciclo)\n<b>Chiara
-    Leonetti</b> - <i>\"Point\"</i> (panchina composta da tre pezzi: seduta, tubolare
-    e sfera luminosa)\n<b>Elisa Tiberi </b>- <i>\"2in1\"</i> (Libreria integrata
-    con seduta e lampada da lettura)\n<b>Giulia Barbaliscia</b> - <i>\"Culi Stellari\"</i>(Seduta
+  m_text: "\n<b><u>Coordinamento e supervisione Progetti Multimediali:</u></b>\n\r\n<b>Prof.
+    Raffaele Vella</b> (Coordinatore del corso di Multimedia and Game Art)\r\n<b>Prof.
+    Giulio Pernice</b> (Docente di Sistemi Interattivi)\r\n\r\n\n\n<b><u>Sviluppo
+    Progetti Multimediali:</u></b>\n\n<b>Diletta Maria Nannini</b> (studentessa del
+    corso di Multimedia and Game Art)\n<b>Samuele Palmalupi</b> (studente del corso
+    di Multimedia and Game Art)\r\n\n\n\n<b><u>Coordinamento e supervisione Progetti
+    Design:</u></b>\n\n<b>Prof. Alessandro Ciancio </b>(Coordinatore del corso di
+    Design - docente di exhibit design)\r\n<b>Prof. Paolo Parea </b>(docente di product
+    design)\r\n\n\n\n<b><u>Progetti Design:</u></b>\n\n<b>Alara Celayir</b> - <i>\"Durocco\"</i>
+    (gioco per bambini realizzato con materiali di riciclo)\n<b>Chiara Leonetti</b>
+    - <i>\"Point\"</i> (panchina composta da tre pezzi: seduta, tubolare e sfera
+    luminosa)\n<b>Elisa Tiberi </b>- <i>\"2in1\"</i> (Libreria integrata con seduta
+    e lampada da lettura)\n<b>Giulia Barbaliscia</b> - <i>\"Culi Stellari\"</i>(Seduta
     trasparente sagomata con elementi grafici che riproducono dei tanga nel punto
     dove ci si siede)\n<b>Giulia Barbaliscia</b> -</b> <i>\"Scoliosis\"</i>(Lampada
     snodabile ispirata al profilo di una modella)\n<b>Letizia Domilici </b>- <i>\"Black
@@ -6724,6 +6757,7 @@ GameObject:
   - component: {fileID: 2034514132}
   - component: {fileID: 2034514131}
   - component: {fileID: 2034514133}
+  - component: {fileID: 2034514134}
   m_Layer: 5
   m_Name: BTN_Ogg_00
   m_TagString: Untagged
@@ -6807,12 +6841,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -6844,6 +6878,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2034514134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034514129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc00d71cae8c67439807e0066152f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonUtilities
+  isDefaultActive: 1
+  myIndex: 0
+  refTo_SO_Events: {fileID: 11400000, guid: a256e50ef1345434d91f0e1e8cdf0e0c, type: 2}
 --- !u!20 &2512387468973847745
 Camera:
   m_ObjectHideFlags: 0
